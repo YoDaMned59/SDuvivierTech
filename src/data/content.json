@@ -1,0 +1,61 @@
+{
+  "navigation": {
+    "accueil": "/",
+    "projets": "/projets",
+    "services": "/services",
+    "contact": "/contact"
+  },
+  "hero": {
+    "title": "Développeur Web",
+    "subtitle": "Créateur d'expériences numériques",
+    "description": "Je conçois et développe des applications web modernes et performantes, en accordant une attention particulière à l'expérience utilisateur."
+  },
+  "contact": {
+    "email": "sduviviertech@outlook.fr",
+    "phone": "+33 6 46 14 72 82",
+    "address": "Meteren",
+    "location": "Meteren, Nord (59)",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/duviviersebastien/",
+      "facebook": "https://www.facebook.com/profile.php?id=61573940604104"
+    }
+  },
+  "services": [
+    {
+      "title": "Développement Web",
+      "description": "Je conçois des sites modernes, intuitifs et adaptés à tous les écrans pour mettre en valeur votre activité en ligne.",
+      "subtitle": "Besoin d'un site qui vous ressemble ? Parlons-en !",
+      "icon": "code",
+      "features": [
+        "Site vitrine – Présentez votre entreprise et attirez vos clients",
+        "Application web – Des outils interactifs adaptés à vos besoins",
+        "Espace administrateur – Gérez facilement votre contenu",
+        "Optimisation – Un site rapide et performant pour une meilleure visibilité"
+      ]
+    },
+    {
+      "title": "Intégration Front-end",
+      "description": "Je transforme vos maquettes en sites web interactifs, fluides et agréables à naviguer. Chaque détail compte pour offrir une expérience utilisateur optimale.",
+      "subtitle": "Votre design, sublimé sur le web",
+      "icon": "layout",
+      "features": [
+        "Adapté à tous les écrans – Un site beau et fonctionnel sur mobile, tablette et ordinateur",
+        "Animations fluides – Des effets dynamiques pour une navigation plus engageante",
+        "Accessibilité – Un site pensé pour tous, sans exception",
+        "Performance optimisée – Rapide, efficace et agréable à utiliser"
+      ]
+    },
+    {
+      "title": "Maintenance & Support",
+      "description": "Je veille à ce que votre site fonctionne parfaitement, en toute sécurité et sans interruption.",
+      "subtitle": "Vous vous concentrez sur votre activité, je m'occupe du reste !",
+      "icon": "settings",
+      "features": [
+        "Mises à jour régulières – Votre site reste à jour et sécurisé",
+        "Corrections rapides – Les bugs sont détectés et corrigés sans attendre",
+        "Optimisation continue – Améliorations pour toujours plus de fluidité et de rapidité",
+        "Support technique – Une assistance fiable en cas de besoin"
+      ]
+    }
+  ]
+} 

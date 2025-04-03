@@ -1,0 +1,36 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "SDuvivierTech",
+      "description": "Mon portfolio personnel présentant mes services de développement web et mes réalisations. Développé avec React et des animations modernes.",
+      "image": "/images/portfolio.jpg",
+      "technologies": ["React", "SCSS", "Framer Motion"],
+      "link": "https://sduviviertech.fr"
+    },
+    {
+      "id": 2,
+      "title": "Restaurant Le Gourmet",
+      "description": "Site vitrine pour un restaurant gastronomique, avec menu interactif, système de réservation en ligne et galerie photo des plats.",
+      "image": "/images/restaurant.jpg",
+      "technologies": ["React", "Node.js", "MongoDB"],
+      "link": "https://legourmet.fr"
+    },
+    {
+      "id": 3,
+      "title": "FitTracker",
+      "description": "Application de suivi sportif permettant aux utilisateurs de suivre leurs progrès, créer des programmes d'entraînement personnalisés et partager leurs résultats.",
+      "image": "/images/fitness.jpg",
+      "technologies": ["React Native", "Firebase", "Redux"],
+      "link": "https://fittracker-app.com"
+    },
+    {
+      "id": 4,
+      "title": "E-commerce Bio Local",
+      "description": "Plateforme de vente en ligne pour producteurs locaux, permettant aux clients de commander des produits bio et de les récupérer en points relais.",
+      "image": "/images/ecommerce.jpg",
+      "technologies": ["React", "Stripe", "Express", "PostgreSQL"],
+      "link": "https://biolocal.fr"
+    }
+  ]
+} 

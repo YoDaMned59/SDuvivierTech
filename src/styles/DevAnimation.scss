@@ -1,0 +1,143 @@
+// Variables
+$window-bg: #1E1E1E;
+$window-header: #2D2D2D;
+$text-color: #D4D4D4;
+$accent-color: #C4A484;
+$font-mono: 'Consolas', 'Monaco', monospace;
+
+// Mixins
+@mixin window-control($color) {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: $color;
+}
+
+.dev-animation {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  position: relative;
+  background: linear-gradient(135deg, #0A0A1F 0%, #1A1A3F 100%);
+}
+
+.code-window {
+  width: 100%;
+  max-width: 600px;
+  background-color: $window-bg;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+
+  &__header {
+    background-color: $window-header;
+    padding: 0.8rem 1rem;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  &__content {
+    padding: 1.5rem;
+    font-family: $font-mono;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+}
+
+.window-controls {
+  display: flex;
+  gap: 8px;
+  margin-right: 1rem;
+
+  .control {
+    &.close { @include window-control(#FF5F56); }
+    &.minimize { @include window-control(#FFBD2E); }
+    &.maximize { @include window-control(#27C93F); }
+  }
+}
+
+.window-title {
+  color: $text-color;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.code-line {
+  display: flex;
+  margin-bottom: 0.5rem;
+  color: $text-color;
+
+  .line-number {
+    opacity: 0.5;
+    min-width: 2rem;
+    margin-right: 1rem;
+    text-align: right;
+  }
+
+  .line-content {
+    color: #9CDCFE;
+    
+    // Mots-clés
+    .keyword {
+      color: #C586C0;
+    }
+
+    // Chaînes
+    .string {
+      color: #CE9178;
+    }
+
+    // Nombres
+    .number {
+      color: #B5CEA8;
+    }
+  }
+}
+
+.welcome-message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 10;
+
+  h1 {
+    color: $accent-color;
+    font-size: 3rem;
+    font-weight: 700;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  }
+}
+
+// Responsive
+@media (max-width: 768px) {
+  .code-window {
+    font-size: 12px;
+    margin: 1rem;
+  }
+
+  .welcome-message {
+    h1 {
+      font-size: 2rem;
+    }
+  }
+}
+
+// Animation du curseur
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.code-line:last-child::after {
+  content: '|';
+  animation: blink 1s step-end infinite;
+  margin-left: 2px;
+  color: $accent-color;
+} 
