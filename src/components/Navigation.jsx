@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import logo from '../assets/LogoSduvivierTech.png';
@@ -5,6 +6,7 @@ import logo from '../assets/LogoSduvivierTech.png';
 function Navigation() {
   const location = useLocation();
   const navigate = useNavigate();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleAboutClick = (e) => {
     e.preventDefault();
@@ -15,6 +17,11 @@ function Navigation() {
       // Si on est déjà sur la page d'accueil, on défile directement
       document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
     }
+    setIsMenuOpen(false);
+  };
+
+  const handleLinkClick = () => {
+    setIsMenuOpen(false);
   };
 
   return (
@@ -24,10 +31,21 @@ function Navigation() {
           <img src={logo} alt="SDuvivierTech" className="navigation__logo-img" />
         </div>
 
-        <div className="navigation__links">
+        <button 
+          className={`navigation__burger ${isMenuOpen ? 'active' : ''}`}
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label="Menu"
+        >
+          <div />
+          <div />
+          <div />
+        </button>
+
+        <div className={`navigation__links ${isMenuOpen ? 'active' : ''}`}>
           <Link
             to="/"
             className={`navigation__link ${location.pathname === '/' ? 'navigation__link--active' : ''}`}
+            onClick={handleLinkClick}
           >
             Accueil
           </Link>
@@ -41,18 +59,21 @@ function Navigation() {
           <Link
             to="/projets"
             className={`navigation__link ${location.pathname === '/projets' ? 'navigation__link--active' : ''}`}
+            onClick={handleLinkClick}
           >
             Projets
           </Link>
           <Link
             to="/services"
             className={`navigation__link ${location.pathname === '/services' ? 'navigation__link--active' : ''}`}
+            onClick={handleLinkClick}
           >
             Services
           </Link>
           <Link
             to="/contact"
             className={`navigation__link ${location.pathname === '/contact' ? 'navigation__link--active' : ''}`}
+            onClick={handleLinkClick}
           >
             Contact
           </Link>
