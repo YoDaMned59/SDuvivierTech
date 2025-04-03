@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import projectsData from '../data/projects.json';
+import siteArtisanImage from '../assets/site-artisan.jpg';
+import homeBeauticianImage from '../assets/Home-beautician.jpg';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -24,6 +26,17 @@ const itemVariants = {
 };
 
 function Projects() {
+  const getProjectImage = (title) => {
+    switch (title) {
+      case "Repro Toutes Réparations":
+        return siteArtisanImage;
+      case "Home Beautician":
+        return homeBeauticianImage;
+      default:
+        return null;
+    }
+  };
+
   return (
     <div className="projects-page">
       <motion.h1 
@@ -48,14 +61,17 @@ function Projects() {
             variants={itemVariants}
           >
             <div className="project-card__image">
-              <img src={project.image} alt={project.title} />
+              <img 
+                src={getProjectImage(project.title)} 
+                alt={project.title} 
+              />
             </div>
             <div className="project-card__content">
               <h2>{project.title}</h2>
               <p>{project.description}</p>
-              <Link to={project.link} className="project-card__link">
+              <a href={project.link} target="_blank" rel="noopener noreferrer" className="project-card__link">
                 Voir le projet
-              </Link>
+              </a>
             </div>
           </motion.div>
         ))}
