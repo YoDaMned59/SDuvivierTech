@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import projectsData from '../data/projects.json';
 import siteArtisanImage from '../assets/site-artisan.jpg';
 import homeBeauticianImage from '../assets/Home-beautician.jpg';
+import ninaCarducciImage from '../assets/nina-carducci.webp';
+import printItImage from '../assets/print-it.jpg';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -32,6 +34,10 @@ function Projects() {
         return siteArtisanImage;
       case "Home Beautician":
         return homeBeauticianImage;
+      case "Nina Carducci":
+        return ninaCarducciImage;
+      case "Print-It":
+        return printItImage;
       default:
         return null;
     }
