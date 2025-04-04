@@ -37,6 +37,11 @@ function About() {
               src={profileImage} 
               alt="Sébastien Duvivier" 
               className="about__image"
+              width={400}
+              height={400}
+              loading="eager"
+              decoding="async"
+              fetchpriority="high"
             />
           </motion.div>
         </div>

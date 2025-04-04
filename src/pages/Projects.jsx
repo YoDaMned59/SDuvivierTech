@@ -33,18 +33,33 @@ const Projects = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // Mapping des images
+  // Mapping des images avec leurs dimensions
   const projectImages = {
-    'repro-toutes-reparations': siteArtisanImage,
-    'home-beautician': homeBeauticianImage,
-    'nina-carducci': ninaCarducciImage,
-    'print-it': printItImage
+    'repro-toutes-reparations': {
+      src: siteArtisanImage,
+      width: 800,
+      height: 600
+    },
+    'home-beautician': {
+      src: homeBeauticianImage,
+      width: 800,
+      height: 600
+    },
+    'nina-carducci': {
+      src: ninaCarducciImage,
+      width: 800,
+      height: 600
+    },
+    'print-it': {
+      src: printItImage,
+      width: 800,
+      height: 600
+    }
   };
 
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        // Ajout d'un timestamp pour éviter le cache du navigateur
         const timestamp = new Date().getTime();
         const response = await fetch(`/data/projects.json?t=${timestamp}`);
         
@@ -66,10 +81,7 @@ const Projects = () => {
 
     fetchProjects();
     
-    // Rafraîchir les données toutes les 30 secondes
     const interval = setInterval(fetchProjects, 30000);
-    
-    // Nettoyage à la destruction du composant
     return () => clearInterval(interval);
   }, []);
 
@@ -112,14 +124,20 @@ const Projects = () => {
               transition={{ duration: 0.5 }}
             >
               <div className="project-card__image">
-                <img 
-                  src={projectImages[project.id]} 
-                  alt={project.title}
-                  onError={(e) => {
-                    e.target.onerror = null;
-                    console.error(`Image non trouvée pour le projet: ${project.id}`);
-                  }}
-                />
+                {projectImages[project.id] && (
+                  <img 
+                    src={projectImages[project.id].src}
+                    alt={project.title}
+                    width={projectImages[project.id].width}
+                    height={projectImages[project.id].height}
+                    loading="lazy"
+                    decoding="async"
+                    onError={(e) => {
+                      e.target.onerror = null;
+                      console.error(`Image non trouvée pour le projet: ${project.id}`);
+                    }}
+                  />
+                )}
               </div>
               <div className="project-card__content">
                 <h2>{project.title}</h2>

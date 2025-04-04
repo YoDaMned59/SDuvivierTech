@@ -18,6 +18,12 @@ $window-bg: #1E1E1E;
   box-sizing: border-box;
 }
 
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+}
+
 body {
   font-family: $font-primary;
   background: $background-gradient;
@@ -27,7 +33,7 @@ body {
 
 // Navigation
 .navigation {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -35,6 +41,7 @@ body {
   padding: 0;
   transition: all 0.3s ease;
   background: transparent;
+  width: 100%;
 
   &--scrolled {
     background: rgba($background-dark, 0.95);
@@ -45,7 +52,7 @@ body {
   &__container {
     max-width: 100%;
     margin: 0;
-    padding: 0 2rem;
+    padding: 0 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -60,16 +67,26 @@ body {
     z-index: 1001;
     position: absolute;
     top: 0;
-    left: 2rem;
+    left: 1rem;
     
     img {
-      height: 200px;
+      height: 150px;
       width: auto;
       transition: transform 0.3s ease;
       margin-top: 10px;
       border-radius: 50%;
       background: rgba($background-dark, 0.5);
-      padding: 15px;
+      padding: 10px;
+
+      @media (max-width: 768px) {
+        height: 120px;
+        padding: 8px;
+      }
+
+      @media (max-width: 480px) {
+        height: 100px;
+        padding: 6px;
+      }
 
       &:hover {
         transform: scale(1.05);
@@ -88,6 +105,10 @@ body {
     cursor: pointer;
     padding: 0;
     z-index: 1001;
+    position: absolute;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
 
     &:focus {
       outline: none;
@@ -155,14 +176,15 @@ body {
   .navigation {
     background: rgba($background-dark, 0.95);
     backdrop-filter: blur(10px);
-    position: fixed;
 
     &__container {
       padding: 0.5rem 1rem;
     }
 
-    &__logo-img {
-      height: 150px;
+    &__logo {
+      img {
+        height: 150px;
+      }
     }
 
     &__burger {
@@ -184,7 +206,8 @@ body {
       gap: 2rem;
       padding: 2rem;
       transition: right 0.3s ease;
-      box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+      margin: 0;
+      padding-top: 80px;
 
       &.active {
         right: 0;
@@ -205,12 +228,25 @@ body {
       }
     }
   }
+
+  .hero-container,
+  .projects-page,
+  .services-page,
+  .contact-page,
+  .about-page,
+  .realisations-page {
+    padding-top: 120px;
+    padding-bottom: 50px;
+    min-height: auto;
+  }
 }
 
 @media (max-width: 768px) {
   .navigation {
-    &__logo-img {
-      height: 100px;
+    &__logo {
+      img {
+        height: 120px;
+      }
     }
 
     &__link {
@@ -218,9 +254,14 @@ body {
     }
   }
 
-  // Hero responsive
-  .hero-container {
-    padding-top: 150px;
+  .hero-container,
+  .projects-page,
+  .services-page,
+  .contact-page,
+  .about-page,
+  .realisations-page {
+    padding-top: 100px;
+    padding-bottom: 30px;
     min-height: auto;
   }
 
@@ -265,8 +306,9 @@ body {
     }
 
     &__image-container {
-      height: 300px;
-      max-width: 100%;
+      height: 500px;
+      max-width: 350px;
+      margin: 0 auto;
     }
   }
 
@@ -288,6 +330,10 @@ body {
   // Projects responsive
   .projects-page {
     padding: 150px 1rem 2rem;
+
+    &__title {
+      font-size: 2.5rem;
+    }
   }
 
   .projects-grid {
@@ -304,12 +350,22 @@ body {
   // Contact responsive
   .contact-page {
     padding: 150px 1rem 2rem;
+
+    &__title {
+      font-size: 2.5rem;
+    }
   }
 
   .contact-container {
     grid-template-columns: 1fr;
     gap: 2rem;
     padding: 1rem;
+  }
+
+  .realisations-page {
+    .realisations-hero__title {
+      font-size: 2.5rem;
+    }
   }
 }
 
@@ -349,18 +405,29 @@ body {
     padding: 0.8rem 1.5rem;
     font-size: 1rem;
   }
+
+  .hero-container,
+  .projects-page,
+  .services-page,
+  .contact-page,
+  .about-page,
+  .realisations-page {
+    padding-top: 80px;
+    padding-bottom: 20px;
+  }
 }
 
 // Hero Container
 .hero-container {
   position: relative;
-  min-height: 80vh;
+  width: 100%;
+  min-height: 60vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
-  padding-top: 200px;
-  padding-bottom: 100px;
+  padding: 2rem 1rem;
+  padding-top: 150px;
+  padding-bottom: 50px;
   overflow: hidden;
   background: $background-dark;
 }
@@ -521,15 +588,22 @@ body {
 // Hero Content
 .hero {
   text-align: center;
+  width: 100%;
   max-width: 800px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 2rem 1rem;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   border-radius: 20px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.2);
   z-index: 1;
+
+  @media (max-width: 768px) {
+    padding: 1.5rem;
+    margin: 0 1rem;
+    width: calc(100% - 2rem);
+  }
 }
 
 .hero__title {
@@ -898,23 +972,33 @@ body {
 
 // About Section
 .about {
-  padding: 4rem 2rem;
+  padding: 3rem 1rem;
   background: $background-gradient;
-  min-height: 80vh;
+  min-height: 60vh;
   display: flex;
   align-items: center;
+  width: 100%;
+  overflow: hidden;
 
   &__container {
     max-width: 1200px;
+    width: 100%;
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 400px;
-    gap: 4rem;
+    gap: 3rem;
     align-items: center;
+    padding: 0 1rem;
+
+    @media (max-width: 1024px) {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
   }
 
   &__content {
-    padding-right: 2rem;
+    width: 100%;
+    max-width: 100%;
   }
 
   &__title {
@@ -954,7 +1038,19 @@ body {
   &__image-container {
     position: relative;
     width: 100%;
-    height: 400px;
+    height: 350px;
+    max-width: 400px;
+    margin: 0 auto;
+
+    @media (max-width: 768px) {
+      height: 300px;
+      max-width: 300px;
+    }
+
+    @media (max-width: 480px) {
+      height: 250px;
+      max-width: 250px;
+    }
   }
 
   &__image-wrapper {
@@ -1016,43 +1112,36 @@ body {
 }
 
 @media (max-width: 1024px) {
+  .hero-container {
+    padding-top: 120px;
+  }
+
   .about {
-    padding: 4rem 2rem;
+    padding: 2rem 1rem;
 
     &__container {
-      grid-template-columns: 1fr;
-      gap: 3rem;
-    }
-
-    &__content {
-      padding-right: 0;
-    }
-
-    &__image-container {
-      height: 400px;
-      max-width: 600px;
-      margin: 0 auto;
+      padding: 0;
     }
   }
 }
 
 @media (max-width: 768px) {
+  .hero-container {
+    padding-top: 100px;
+  }
+
   .about {
-    padding: 3rem 1.5rem;
+    padding: 1.5rem 1rem;
+  }
+}
 
-    &__title {
-      font-size: 2rem;
-      text-align: center;
-    }
+@media (max-width: 480px) {
+  .hero-container {
+    padding-top: 80px;
+  }
 
-    &__text {
-      font-size: 1rem;
-      line-height: 1.6;
-    }
-
-    &__image-container {
-      height: 350px;
-    }
+  .about {
+    padding: 1.5rem 1rem;
   }
 }
 
