@@ -13,6 +13,20 @@
       "description": "Site vitrine moderne pour une esthéticienne à domicile, présentant ses services de beauté et de bien-être. Interface intuitive et responsive, mettant en valeur son professionnalisme et son expertise dans les soins esthétiques personnalisés.",
       "link": "https://yodamned59.github.io/service-a-domicile",
       "image": "/assets/Home-beautician.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Nina Carducci",
+      "description": "Site vitrine élégant pour une photographe professionnelle, mettant en valeur son portfolio, ses services de shooting photo et de retouche. Galerie interactive et design moderne optimisé pour présenter ses œuvres.",
+      "link": "https://nina-carducci-photographe.netlify.app/",
+      "image": "/assets/nina-carducci.webp"
+    },
+    {
+      "id": 4,
+      "title": "Print-It",
+      "description": "Imprimeur familial établi depuis 60 ans à Rennes, spécialisé dans les solutions d'impression pour entreprises. Site vitrine présentant leur expertise en création et impression de documents, avec un accompagnement personnalisé du projet à la livraison.",
+      "link": "https://yodamned59.github.io/Print-it-JS/",
+      "image": "/assets/print-it.jpg"
     }
   ]
 } 
