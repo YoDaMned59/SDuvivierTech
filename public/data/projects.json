@@ -1,21 +1,21 @@
 {
   "projects": [
     {
-      "id": 1,
+      "id": "repro-toutes-reparations",
       "title": "Repro Toutes Réparations",
       "description": "Site internet élégant mettant en valeur les services d'une entreprise de rénovation. Navigation simple et agréable, que ce soit sur ordinateur, tablette ou téléphone.",
       "link": "https://yodamned59.github.io/Repro-toutes-reparations/",
       "image": "/assets/site-artisan.jpg"
     },
     {
-      "id": 2,
+      "id": "home-beautician",
       "title": "Home Beautician",
       "description": "Site vitrine moderne pour une esthéticienne à domicile, présentant ses services de beauté et de bien-être. Interface intuitive et responsive, mettant en valeur son professionnalisme et son expertise dans les soins esthétiques personnalisés.",
       "link": "https://yodamned59.github.io/service-a-domicile",
       "image": "/assets/Home-beautician.jpg"
     },
     {
-      "id": 3,
+      "id": "nina-carducci",
       "title": "Nina Carducci",
       "description": "Site vitrine élégant pour une photographe professionnelle, mettant en valeur son portfolio, ses services de shooting photo et de retouche. Galerie interactive et design moderne optimisé pour présenter ses œuvres.",
       "link": "https://nina-carducci-photographe.netlify.app/",
