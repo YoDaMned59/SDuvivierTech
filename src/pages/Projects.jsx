@@ -70,6 +70,9 @@ function Projects() {
               <img 
                 src={getProjectImage(project.title)} 
                 alt={project.title} 
+                loading="lazy"
+                width="400"
+                height="300"
               />
             </div>
             <div className="project-card__content">

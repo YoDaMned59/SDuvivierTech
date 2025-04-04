@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://www.sduviviertech.fr/sitemap.xml
+
+# Interdire l'accès aux fichiers sensibles
+Disallow: /manifest.json
+Disallow: /favicon.ico
+Disallow: /logo192.png
+Disallow: /logo512.png
+Disallow: /robots.txt 

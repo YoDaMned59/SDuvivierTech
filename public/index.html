@@ -5,14 +5,139 @@
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="SDuvivierTech - Développeur Web Créateur d'expériences numériques"
-    />
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="SDuvivierTech - Développeur Web spécialisé dans la création de sites vitrines et d'applications web modernes. Expertise en développement front-end et solutions web sur mesure."/>
+    <meta name="keywords" content="développeur web, création site vitrine, application web, front-end, React, JavaScript, web design"/>
+    <meta name="author" content="Sébastien Duvivier"/>
+    <meta name="robots" content="index, follow"/>
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://www.sduviviertech.fr/"/>
+    <meta property="og:title" content="SDuvivierTech - Développeur Web"/>
+    <meta property="og:description" content="Créateur d'expériences numériques modernes et performantes. Spécialisé dans le développement de sites vitrines et d'applications web."/>
+    <meta property="og:image" content="https://www.sduviviertech.fr/og-image.jpg"/>
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image"/>
+    <meta property="twitter:url" content="https://www.sduviviertech.fr/"/>
+    <meta property="twitter:title" content="SDuvivierTech - Développeur Web"/>
+    <meta property="twitter:description" content="Créateur d'expériences numériques modernes et performantes. Spécialisé dans le développement de sites vitrines et d'applications web."/>
+    <meta property="twitter:image" content="https://www.sduviviertech.fr/twitter-image.jpg"/>
+    
+    <!-- Preload -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" as="style"/>
+    
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <title>SDuvivierTech - Développeur Web</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>SDuvivierTech - Développeur Web | Créateur d'expériences numériques</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+
+    <!-- Schema.org markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Sébastien Duvivier",
+      "jobTitle": "Développeur Web",
+      "url": "https://www.sduviviertech.fr",
+      "sameAs": [
+        "https://www.linkedin.com/in/duviviersebastien/",
+        "https://www.facebook.com/profile.php?id=61573940604104"
+      ],
+      "worksFor": {
+        "@type": "Organization",
+        "name": "SDuvivierTech",
+        "url": "https://www.sduviviertech.fr"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Meteren",
+        "addressRegion": "Nord",
+        "addressCountry": "FR"
+      },
+      "offers": {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Développement Web",
+          "description": "Création de sites vitrines et d'applications web modernes",
+          "provider": {
+            "@type": "Person",
+            "name": "Sébastien Duvivier"
+          }
+        }
+      }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "SDuvivierTech",
+      "url": "https://www.sduviviertech.fr",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://www.sduviviertech.fr/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Développement Web",
+      "provider": {
+        "@type": "Person",
+        "name": "Sébastien Duvivier"
+      },
+      "areaServed": {
+        "@type": "GeoCircle",
+        "geoMidpoint": {
+          "@type": "GeoCoordinates",
+          "latitude": "50.7377",
+          "longitude": "2.6972"
+        },
+        "geoRadius": "50000"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Services Web",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Site Vitrine",
+              "description": "Création de sites web modernes et responsifs"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Application Web",
+              "description": "Développement d'applications web sur mesure"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Maintenance & Support",
+              "description": "Maintenance et support technique pour sites web"
+            }
+          }
+        ]
+      }
+    }
+    </script>
   </head>
   <body>
     <noscript>
