@@ -1,82 +1,10 @@
-# Activation du module de réécriture
+# Configuration React Router (SPA)
 RewriteEngine On
-
-# Redirection de HTTP vers HTTPS
-RewriteCond %{HTTPS} off
-RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-
-# Gestion avancée du cache
-<IfModule mod_expires.c>
-    ExpiresActive On
-    
-    # Images
-    ExpiresByType image/jpeg "access plus 1 year"
-    ExpiresByType image/gif "access plus 1 year"
-    ExpiresByType image/png "access plus 1 year"
-    ExpiresByType image/webp "access plus 1 year"
-    ExpiresByType image/svg+xml "access plus 1 year"
-    ExpiresByType image/x-icon "access plus 1 year"
-    
-    # Vidéo
-    ExpiresByType video/mp4 "access plus 1 year"
-    ExpiresByType video/mpeg "access plus 1 year"
-    
-    # CSS, JavaScript
-    ExpiresByType text/css "access plus 1 month"
-    ExpiresByType text/javascript "access plus 1 month"
-    ExpiresByType application/javascript "access plus 1 month"
-    
-    # Autres
-    ExpiresByType application/pdf "access plus 1 month"
-    ExpiresByType application/x-shockwave-flash "access plus 1 month"
-</IfModule>
-
-# Gestion du cache pour les fichiers HTML et données
-<FilesMatch "\.(html|htm|json)$">
-    Header set Cache-Control "no-cache, no-store, must-revalidate"
-    Header set Pragma "no-cache"
-    Header set Expires 0
-</FilesMatch>
-
-# Compression GZIP améliorée
-<IfModule mod_deflate.c>
-    # Force compression for mangled headers
-    <IfModule mod_setenvif.c>
-        <IfModule mod_headers.c>
-            SetEnvIfNoCase ^(Accept-EncodingZ)$ ^(.*)gzip(.*)$ HAVE_Accept-Encoding
-            RequestHeader append Accept-Encoding "gzip,deflate" env=HAVE_Accept-Encoding
-        </IfModule>
-    </IfModule>
-
-    # Compression de tous les types de sortie
-    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript
-    AddOutputFilterByType DEFLATE application/xml application/xhtml+xml application/rss+xml
-    AddOutputFilterByType DEFLATE application/javascript application/x-javascript application/json
-    AddOutputFilterByType DEFLATE application/x-httpd-php
-    AddOutputFilterByType DEFLATE image/svg+xml
-    
-    # Niveau de compression
-    DeflateCompressionLevel 9
-</IfModule>
-
-# Gestion des erreurs
-ErrorDocument 404 /index.html
-
-# Réécriture pour React Router
 RewriteBase /
 RewriteRule ^index\.html$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME} !-l
 RewriteRule . /index.html [L]
 
-# Protection contre les attaques XSS et autres
-Header set X-XSS-Protection "1; mode=block"
-Header set X-Frame-Options "SAMEORIGIN"
-Header set X-Content-Type-Options "nosniff"
-Header set Referrer-Policy "strict-origin-when-cross-origin"
-Header set Permissions-Policy "geolocation=(), microphone=(), camera=()"
-
-# Optimisation des performances
-Header set Connection keep-alive
-Header set Keep-Alive "timeout=5, max=100" 
+# Gestion des erreurs
+ErrorDocument 404 /index.html 

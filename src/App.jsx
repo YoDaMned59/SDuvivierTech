@@ -6,6 +6,9 @@ import Home from './pages/Home';
 import Projects from './pages/Projects';
 import Services from './pages/Services';
 import Contact from './pages/Contact';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import LegalNotice from './pages/LegalNotice';
+import CookieBanner from './components/CookieBanner';
 import './styles/main.scss';
 
 // Composant pour défiler vers le haut à chaque changement de route
@@ -32,12 +35,15 @@ function App() {
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/projets" element={<Projects />} />
+            <Route path="/projects" element={<Projects />} />
             <Route path="/services" element={<Services />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/politique-de-confidentialite" element={<PrivacyPolicy />} />
+            <Route path="/mentions-legales" element={<LegalNotice />} />
           </Routes>
         </main>
         <Footer />
+        <CookieBanner />
       </div>
     </Router>
   );

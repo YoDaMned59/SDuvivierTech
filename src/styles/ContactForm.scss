@@ -1,0 +1,132 @@
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+
+  &__group {
+    margin-bottom: 1.5rem;
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: #C4A484;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 0.8rem;
+      border: 1px solid rgba(#C4A484, 0.3);
+      border-radius: 4px;
+      background: rgba(255, 255, 255, 0.1);
+      color: #ffffff;
+      font-family: inherit;
+      transition: all 0.3s ease;
+
+      &:focus {
+        outline: none;
+        border-color: #C4A484;
+        background: rgba(255, 255, 255, 0.15);
+      }
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+  }
+
+  &__consent {
+    margin-bottom: 1.5rem;
+
+    .checkbox-container {
+      display: flex;
+      align-items: flex-start;
+      position: relative;
+      padding-left: 35px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      user-select: none;
+
+      input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+
+        &:checked ~ .checkmark {
+          background-color: #C4A484;
+          border-color: #C4A484;
+
+          &:after {
+            display: block;
+          }
+        }
+      }
+
+      .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 20px;
+        width: 20px;
+        background-color: transparent;
+        border: 2px solid rgba(#C4A484, 0.5);
+        border-radius: 4px;
+        transition: all 0.3s ease;
+
+        &:after {
+          content: "";
+          position: absolute;
+          display: none;
+          left: 6px;
+          top: 2px;
+          width: 5px;
+          height: 10px;
+          border: solid white;
+          border-width: 0 2px 2px 0;
+          transform: rotate(45deg);
+        }
+      }
+
+      .consent-text {
+        line-height: 1.4;
+        
+        a {
+          color: #C4A484;
+          text-decoration: none;
+          
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+
+  &__submit {
+    width: 100%;
+    padding: 1rem;
+    background: #C4A484;
+    color: #1A1A3F;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: darken(#C4A484, 10%);
+    }
+
+    &:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+    }
+  }
+} 

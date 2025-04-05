@@ -1,7 +1,7 @@
 {
-  "navigation": {
-    "accueil": "/",
-    "projets": "/projets",
+  "routes": {
+    "home": "/",
+    "projects": "/projects",
     "services": "/services",
     "contact": "/contact"
   },

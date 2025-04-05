@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { FiMail, FiPhone, FiMapPin, FiGithub, FiLinkedin, FiFacebook } from 'react-icons/fi';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import emailjs from '@emailjs/browser';
 import content from '../data/content.json';
 
@@ -33,21 +34,29 @@ function Contact() {
     name: '',
     email: '',
     subject: '',
-    message: ''
+    message: '',
+    consent: false
   });
   const [status, setStatus] = useState({ type: '', message: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const { name, value, type, checked } = e.target;
     setFormData(prev => ({
       ...prev,
-      [name]: value
+      [name]: type === 'checkbox' ? checked : value
     }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!formData.consent) {
+      setStatus({
+        type: 'error',
+        message: 'Veuillez accepter la politique de confidentialité pour envoyer le message.'
+      });
+      return;
+    }
     setIsSubmitting(true);
     setStatus({ type: '', message: '' });
 
@@ -68,7 +77,7 @@ function Contact() {
         type: 'success',
         message: 'Votre message a été envoyé avec succès !'
       });
-      setFormData({ name: '', email: '', subject: '', message: '' });
+      setFormData({ name: '', email: '', subject: '', message: '', consent: false });
     } catch (error) {
       setStatus({
         type: 'error',
@@ -174,6 +183,22 @@ function Contact() {
               onChange={handleChange}
               required
             />
+          </div>
+          <div className="form-group consent-group">
+            <label className="checkbox-container">
+              <input
+                type="checkbox"
+                name="consent"
+                checked={formData.consent}
+                onChange={handleChange}
+                required
+              />
+              <span className="checkmark"></span>
+              <span className="consent-text">
+                J'accepte que mes données soient traitées conformément à la{' '}
+                <Link to="/politique-de-confidentialite">politique de confidentialité</Link>
+              </span>
+            </label>
           </div>
           {status.message && (
             <div className={`form-status ${status.type}`}>

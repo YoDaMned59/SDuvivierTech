@@ -2,10 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import '../styles/main.scss';
-import siteArtisanImage from '../assets/site-artisan.jpg';
-import homeBeauticianImage from '../assets/Home-beautician.jpg';
-import ninaCarducciImage from '../assets/nina-carducci.webp';
-import printItImage from '../assets/print-it.jpg';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -33,45 +29,29 @@ const Projects = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // Mapping des images avec leurs dimensions
-  const projectImages = {
-    'repro-toutes-reparations': {
-      src: siteArtisanImage,
-      width: 800,
-      height: 600
-    },
-    'home-beautician': {
-      src: homeBeauticianImage,
-      width: 800,
-      height: 600
-    },
-    'nina-carducci': {
-      src: ninaCarducciImage,
-      width: 800,
-      height: 600
-    },
-    'print-it': {
-      src: printItImage,
-      width: 800,
-      height: 600
-    }
-  };
-
   useEffect(() => {
     const fetchProjects = async () => {
       try {
         const timestamp = new Date().getTime();
-        const response = await fetch(`/data/projects.json?t=${timestamp}`);
+        console.log('Tentative de chargement des projets...');
+        const response = await fetch(`${window.location.origin}/data/projects.json?t=${timestamp}`);
         
         if (!response.ok) {
-          throw new Error('Erreur lors du chargement des projets');
+          throw new Error(`Erreur lors du chargement des projets: ${response.status}`);
         }
 
         const data = await response.json();
-        setProjects(data.projects || []);
-        setError(null);
+        console.log('Données reçues:', data);
+        
+        if (Array.isArray(data.projects)) {
+          setProjects(data.projects);
+          setError(null);
+          console.log('Projets chargés avec succès:', data.projects);
+        } else {
+          throw new Error('Format de données invalide');
+        }
       } catch (error) {
-        console.error('Erreur:', error);
+        console.error('Erreur détaillée:', error);
         setError('Impossible de charger les projets. Veuillez réessayer plus tard.');
         setProjects([]);
       } finally {
@@ -80,9 +60,6 @@ const Projects = () => {
     };
 
     fetchProjects();
-    
-    const interval = setInterval(fetchProjects, 30000);
-    return () => clearInterval(interval);
   }, []);
 
   if (loading) {
@@ -114,30 +91,26 @@ const Projects = () => {
           Aucun projet disponible pour le moment.
         </div>
       ) : (
-        <div className="projects-grid">
+        <motion.div 
+          className="projects-grid"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
           {projects.map((project) => (
             <motion.div
               key={project.id}
               className="project-card"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
+              variants={itemVariants}
             >
               <div className="project-card__image">
-                {projectImages[project.id] && (
-                  <img 
-                    src={projectImages[project.id].src}
-                    alt={project.title}
-                    width={projectImages[project.id].width}
-                    height={projectImages[project.id].height}
-                    loading="lazy"
-                    decoding="async"
-                    onError={(e) => {
-                      e.target.onerror = null;
-                      console.error(`Image non trouvée pour le projet: ${project.id}`);
-                    }}
-                  />
-                )}
+                <img 
+                  src={project.image}
+                  alt={project.title}
+                  width={800}
+                  height={600}
+                  loading="lazy"
+                />
               </div>
               <div className="project-card__content">
                 <h2>{project.title}</h2>
@@ -155,7 +128,7 @@ const Projects = () => {
               </div>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       )}
 
       <motion.div 

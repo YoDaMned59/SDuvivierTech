@@ -1,35 +1,51 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import logo from '../assets/LogoSduvivierTech.png';
 
 function Navigation() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 50;
+      setScrolled(isScrolled);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const handleAboutClick = (e) => {
     e.preventDefault();
-    if (location.pathname !== '/') {
-      // Si on n'est pas sur la page d'accueil, on y retourne d'abord
-      navigate('/', { state: { scrollToAbout: true } });
+    setIsMenuOpen(false);
+    
+    if (location.pathname === '/') {
+      // Si on est sur la page d'accueil, on défile directement vers la section
+      const aboutSection = document.querySelector('.about');
+      if (aboutSection) {
+        aboutSection.scrollIntoView({ behavior: 'smooth' });
+      }
     } else {
-      // Si on est déjà sur la page d'accueil, on défile directement
-      document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
+      // Si on est sur une autre page, on retourne à l'accueil puis on défile
+      navigate('/');
+      setTimeout(() => {
+        const aboutSection = document.querySelector('.about');
+        if (aboutSection) {
+          aboutSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
     }
-    setIsMenuOpen(false);
-  };
-
-  const handleLinkClick = () => {
-    setIsMenuOpen(false);
   };
 
   return (
-    <nav className="navigation">
+    <nav className={`navigation ${scrolled ? 'navigation--scrolled' : ''}`}>
       <div className="navigation__container">
-        <div className="navigation__logo">
-          <img src={logo} alt="SDuvivierTech" className="navigation__logo-img" />
-        </div>
+        <Link to="/" className="navigation__logo">
+          <img src={logo} alt="SDuvivierTech" />
+        </Link>
 
         <button 
           className={`navigation__burger ${isMenuOpen ? 'active' : ''}`}
@@ -42,41 +58,11 @@ function Navigation() {
         </button>
 
         <div className={`navigation__links ${isMenuOpen ? 'active' : ''}`}>
-          <Link
-            to="/"
-            className={`navigation__link ${location.pathname === '/' ? 'navigation__link--active' : ''}`}
-            onClick={handleLinkClick}
-          >
-            Accueil
-          </Link>
-          <a
-            href="/#about"
-            className="navigation__link"
-            onClick={handleAboutClick}
-          >
-            À propos
-          </a>
-          <Link
-            to="/projets"
-            className={`navigation__link ${location.pathname === '/projets' ? 'navigation__link--active' : ''}`}
-            onClick={handleLinkClick}
-          >
-            Projets
-          </Link>
-          <Link
-            to="/services"
-            className={`navigation__link ${location.pathname === '/services' ? 'navigation__link--active' : ''}`}
-            onClick={handleLinkClick}
-          >
-            Services
-          </Link>
-          <Link
-            to="/contact"
-            className={`navigation__link ${location.pathname === '/contact' ? 'navigation__link--active' : ''}`}
-            onClick={handleLinkClick}
-          >
-            Contact
-          </Link>
+          <Link to="/" onClick={() => setIsMenuOpen(false)}>Accueil</Link>
+          <a href="#about" onClick={handleAboutClick}>À propos</a>
+          <Link to="/services" onClick={() => setIsMenuOpen(false)}>Services</Link>
+          <Link to="/projects" onClick={() => setIsMenuOpen(false)}>Projets</Link>
+          <Link to="/contact" onClick={() => setIsMenuOpen(false)}>Contact</Link>
         </div>
       </div>
     </nav>

@@ -104,14 +104,19 @@ function Hero() {
           />
         </p>
         
-        <div className="hero__buttons">
-          <Link to="/projets" className="contact-button">
+        <motion.div
+          className="hero__buttons"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.8 }}
+        >
+          <Link to="/projects" className="contact-button">
             Voir mes projets
           </Link>
           <Link to="/contact" className="contact-button">
             Me contacter
           </Link>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
