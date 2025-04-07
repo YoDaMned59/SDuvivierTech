@@ -3,77 +3,83 @@ import { Link } from 'react-router-dom';
 import '../styles/CookieBanner.scss';
 
 const CookieBanner = () => {
-  const [isVisible, setIsVisible] = useState(false);
+  const [showBanner, setShowBanner] = useState(true);
 
   useEffect(() => {
-    const cookieConsent = localStorage.getItem('cookieConsent');
-    if (!cookieConsent) {
-      setIsVisible(true);
+    // Vérifier si le consentement existe déjà
+    const consent = localStorage.getItem('cookieConsent');
+    if (consent) {
+      setShowBanner(false);
+      // Configurer Google Analytics en fonction du consentement
+      if (consent === 'accepted') {
+        window['ga-disable-G-71037Y3R1S'] = false;
+        window.gtag('consent', 'update', {
+          'analytics_storage': 'granted'
+        });
+      } else {
+        window['ga-disable-G-71037Y3R1S'] = true;
+        window.gtag('consent', 'update', {
+          'analytics_storage': 'denied'
+        });
+      }
+    } else {
+      // Si pas de consentement, désactiver Google Analytics par défaut
+      window['ga-disable-G-71037Y3R1S'] = true;
     }
   }, []);
 
-  const acceptCookies = () => {
+  const handleAccept = () => {
     localStorage.setItem('cookieConsent', 'accepted');
-    setIsVisible(false);
-    // Activer Google Analytics seulement après consentement
-    if (window.gtag) {
-      window.gtag('consent', 'update', {
-        'analytics_storage': 'granted'
-      });
-    }
+    localStorage.setItem('cookieConsentDate', new Date().toISOString());
+    setShowBanner(false);
+    // Activer Google Analytics
+    window['ga-disable-G-71037Y3R1S'] = false;
+    // Réinitialiser Google Analytics
+    window.gtag('consent', 'update', {
+      'analytics_storage': 'granted'
+    });
   };
 
-  const refuseCookies = () => {
+  const handleRefuse = () => {
     localStorage.setItem('cookieConsent', 'refused');
-    setIsVisible(false);
+    localStorage.setItem('cookieConsentDate', new Date().toISOString());
+    setShowBanner(false);
     // Désactiver Google Analytics
-    if (window.gtag) {
-      window.gtag('consent', 'update', {
-        'analytics_storage': 'denied'
-      });
-    }
+    window['ga-disable-G-71037Y3R1S'] = true;
+    // Mettre à jour le consentement
+    window.gtag('consent', 'update', {
+      'analytics_storage': 'denied'
+    });
   };
 
-  if (!isVisible) return null;
+  if (!showBanner) return null;
 
   return (
-    <div 
-      className="cookie-banner" 
-      role="dialog" 
-      aria-labelledby="cookie-title"
-      aria-describedby="cookie-description"
-    >
+    <div className="cookie-banner" role="dialog" aria-labelledby="cookie-title" aria-describedby="cookie-description">
+      <h2 id="cookie-title" className="visually-hidden">Paramètres des cookies</h2>
+      <p id="cookie-description" className="visually-hidden">
+        Nous utilisons des cookies pour analyser le trafic de notre site. Vous pouvez accepter ou refuser leur utilisation.
+      </p>
       <div className="cookie-banner__content">
-        <div>
-          <h2 id="cookie-title" className="visually-hidden">Consentement aux cookies</h2>
-          <p id="cookie-description">
-            Ce site utilise des cookies pour améliorer votre expérience. 
-            En continuant à naviguer sur ce site, vous acceptez notre utilisation des cookies.
-            Pour en savoir plus, consultez notre{' '}
-            <Link 
-              to="/politique-de-confidentialite"
-              onClick={(e) => e.stopPropagation()}
-              onKeyDown={(e) => {
-                if (e.key === 'Enter') {
-                  e.stopPropagation();
-                }
-              }}
-            >
-              politique de confidentialité
-            </Link>.
-          </p>
-        </div>
+        <p>
+          Nous utilisons des cookies pour analyser le trafic de notre site et améliorer votre expérience. 
+          Conformément aux nouvelles politiques de confidentialité des navigateurs, nous limitons l'utilisation des cookies tiers.
+          En acceptant, vous consentez à leur utilisation. Pour plus d'informations, consultez notre{' '}
+          <Link to="/politique-de-confidentialite" onClick={(e) => e.stopPropagation()}>
+            politique de confidentialité
+          </Link>.
+        </p>
         <div className="cookie-banner__buttons">
           <button 
-            onClick={acceptCookies} 
-            className="cookie-banner__accept"
+            onClick={handleAccept}
+            className="cookie-banner__button cookie-banner__button--accept"
             aria-label="Accepter les cookies"
           >
             Accepter
           </button>
           <button 
-            onClick={refuseCookies} 
-            className="cookie-banner__refuse"
+            onClick={handleRefuse}
+            className="cookie-banner__button cookie-banner__button--refuse"
             aria-label="Refuser les cookies"
           >
             Refuser

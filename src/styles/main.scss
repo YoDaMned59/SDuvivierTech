@@ -361,7 +361,7 @@ body {
   align-items: center;
   justify-content: center;
   padding: 2rem 1rem;
-  padding-top: 300px;
+  padding-top: 150px;
   padding-bottom: 50px;
   overflow: hidden;
   background: $background-dark;
@@ -1063,6 +1063,8 @@ body {
 @media (max-width: 768px) {
   .hero-container {
     padding-top: 100px;
+    min-height: 100vh;
+    justify-content: flex-start;
   }
 
   .about {

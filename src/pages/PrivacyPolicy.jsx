@@ -91,6 +91,22 @@ const PrivacyPolicy = () => {
             via notre bannière de cookies. Vous pouvez à tout moment modifier vos préférences 
             en supprimant les cookies de votre navigateur.
           </p>
+          <h3>Cookies tiers et nouvelles politiques de confidentialité</h3>
+          <p>
+            Conformément aux nouvelles politiques de confidentialité des navigateurs comme Chrome, 
+            nous limitons l'utilisation des cookies tiers. Notre implémentation de Google Analytics 
+            a été adaptée pour respecter ces nouvelles normes :
+          </p>
+          <ul>
+            <li>Nous n'utilisons pas de cookies tiers pour le suivi publicitaire</li>
+            <li>Les cookies analytiques sont limités aux données de première partie</li>
+            <li>Nous ne partageons pas vos données avec des tiers sans votre consentement explicite</li>
+            <li>Les cookies sont configurés avec des durées de vie limitées (30 jours maximum)</li>
+          </ul>
+          <p>
+            Ces mesures garantissent que votre expérience de navigation reste privée tout en nous 
+            permettant d'améliorer notre site grâce à des données d'utilisation anonymes.
+          </p>
         </section>
 
         <section>
