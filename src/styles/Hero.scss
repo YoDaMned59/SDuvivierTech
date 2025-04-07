@@ -1,0 +1,82 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  
+  &__content {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+
+  &__title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    min-height: 3.5rem; // Hauteur fixe pour éviter le CLS
+  }
+
+  .typing-effect {
+    display: inline-block;
+    min-width: 300px; // Largeur minimale fixe
+    min-height: 1.5em; // Hauteur minimale fixe
+    position: relative;
+    
+    &::after {
+      content: '|';
+      position: absolute;
+      right: -4px;
+      animation: blink 1s infinite;
+    }
+  }
+
+  &__subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    min-height: 2rem; // Hauteur fixe pour éviter le CLS
+  }
+
+  &__description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    min-height: 3rem; // Hauteur fixe pour éviter le CLS
+  }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 1rem;
+    
+    &__title {
+      font-size: 2rem;
+      min-height: 2.5rem;
+    }
+    
+    .typing-effect {
+      min-width: 200px;
+    }
+    
+    &__subtitle {
+      font-size: 1.2rem;
+      min-height: 1.5rem;
+    }
+    
+    &__description {
+      font-size: 1rem;
+      min-height: 2.5rem;
+    }
+  }
+} 

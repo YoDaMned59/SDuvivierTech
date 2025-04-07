@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     
+    <!-- Preload des polices critiques -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" as="style" />
+    <link rel="preload" href="https://fonts.gstatic.com/s/poppins/v20/pxiByp8kv8JHgFVrLCz7Z1xlFQ.woff2" as="font" type="font/woff2" crossorigin />
+    
     <!-- SEO Meta Tags -->
     <meta name="description" content="SDuvivierTech - Développeur Web spécialisé dans la création de sites vitrines et d'applications web modernes. Expertise en développement front-end et solutions web sur mesure."/>
     <meta name="keywords" content="développeur web, création site vitrine, application web, front-end, React, JavaScript, web design"/>
@@ -33,8 +37,18 @@
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <title>SDuvivierTech - Développeur Web | Créateur d'expériences numériques</title>
     
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+    <!-- Fonts avec font-display: swap -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+    <style>
+      /* Fallback font metrics pour éviter le CLS */
+      @font-face {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: local('Poppins Regular'), local('Poppins-Regular');
+      }
+    </style>
 
     <!-- Schema.org markup -->
     <script type="application/ld+json">
@@ -137,6 +151,22 @@
         ]
       }
     }
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-71037Y3R1S"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-71037Y3R1S', {
+        'cookie_flags': 'SameSite=None;Secure',
+        'cookie_domain': 'auto',
+        'cookie_expires': 30 * 24 * 60 * 60, // 30 jours
+        'cookie_update': true,
+        'allow_google_signals': false,
+        'allow_ad_personalization_signals': false
+      });
     </script>
   </head>
   <body>
