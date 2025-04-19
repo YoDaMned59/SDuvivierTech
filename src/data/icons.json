@@ -1,0 +1,84 @@
+{
+  "icons": {
+    "FaRocket": {
+      "import": "FaRocket",
+      "package": "react-icons/fa"
+    },
+    "FaTools": {
+      "import": "FaTools",
+      "package": "react-icons/fa"
+    },
+    "FaStar": {
+      "import": "FaStar",
+      "package": "react-icons/fa"
+    },
+    "FaFire": {
+      "import": "FaFire",
+      "package": "react-icons/fa"
+    },
+    "FaCheck": {
+      "import": "FaCheck",
+      "package": "react-icons/fa"
+    },
+    "FaArrowRight": {
+      "import": "FaArrowRight",
+      "package": "react-icons/fa"
+    },
+    "FaShieldAlt": {
+      "import": "FaShieldAlt",
+      "package": "react-icons/fa"
+    },
+    "FaInfoCircle": {
+      "import": "FaInfoCircle",
+      "package": "react-icons/fa"
+    },
+    "FaPalette": {
+      "import": "FaPalette",
+      "package": "react-icons/fa"
+    },
+    "FaMobileAlt": {
+      "import": "FaMobileAlt",
+      "package": "react-icons/fa"
+    },
+    "FaEnvelope": {
+      "import": "FaEnvelope",
+      "package": "react-icons/fa"
+    },
+    "FaCompass": {
+      "import": "FaCompass",
+      "package": "react-icons/fa"
+    },
+    "FaSync": {
+      "import": "FaSync",
+      "package": "react-icons/fa"
+    },
+    "FaFolder": {
+      "import": "FaFolder",
+      "package": "react-icons/fa"
+    },
+    "FaChartLine": {
+      "import": "FaChartLine",
+      "package": "react-icons/fa"
+    },
+    "FaPencilAlt": {
+      "import": "FaPencilAlt",
+      "package": "react-icons/fa"
+    },
+    "FaPuzzlePiece": {
+      "import": "FaPuzzlePiece",
+      "package": "react-icons/fa"
+    },
+    "FaComments": {
+      "import": "FaComments",
+      "package": "react-icons/fa"
+    },
+    "FaCog": {
+      "import": "FaCog",
+      "package": "react-icons/fa"
+    },
+    "FaLock": {
+      "import": "FaLock",
+      "package": "react-icons/fa"
+    }
+  }
+} 

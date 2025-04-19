@@ -1,0 +1,90 @@
+{
+  "offers": [
+    {
+      "icon": "FaRocket",
+      "badge": "⭐ Idéal pour démarrer rapidement",
+      "title": "Offre Clé en Main",
+      "description": "Pour démarrer rapidement avec un site pro et élégant",
+      "infoBonus": {
+        "icon": "FaInfoCircle",
+        "text": "Les templates proposés sont basés sur des sites réels que j'ai déjà créés (voir la section Projets), pour vous garantir un rendu professionnel et éprouvé."
+      },
+      "price": "250€/site",
+      "features": [
+        {
+          "icon": "FaCheck",
+          "text": "Site vitrine professionnel – Basé sur un de mes modèles éprouvés"
+        },
+        {
+          "icon": "FaPalette",
+          "text": "Personnalisation légère – Logo, couleurs, textes, images"
+        },
+        {
+          "icon": "FaRocket",
+          "text": "Mise en ligne rapide – Site prêt en 3 à 5 jours"
+        },
+        {
+          "icon": "FaCompass",
+          "text": "Contenu guidé – Je vous aide à structurer vos sections"
+        },
+        {
+          "icon": "FaSync",
+          "text": "Évolutif – Possibilité de passer à l'offre sur-mesure plus tard"
+        }
+      ],
+      "tagline": "🔰 Idéal pour lancer votre activité avec un site professionnel, sans complexité ni délai.",
+      "subscription": {
+        "price": "19€/mois",
+        "description": "Hébergement, maintenance, mises à jour et modifications incluses 7j/7."
+      }
+    },
+    {
+      "icon": "FaTools",
+      "badge": "🔥 Parfait pour se démarquer",
+      "title": "Offre Sur-Mesure",
+      "description": "Un site unique, pensé pour vous et vos objectifs",
+      "price": "750€/site",
+      "features": [
+        {
+          "icon": "FaChartLine",
+          "text": "Stratégie personnalisée – Site conçu pour convertir selon vos objectifs"
+        },
+        {
+          "icon": "FaPalette",
+          "text": "Identité visuelle sur-mesure – Charte graphique, ambiance, visuels, cohérence globale"
+        },
+        {
+          "icon": "FaCog",
+          "text": "Fonctionnalités avancées – Blog, modules spécifiques, outils pros"
+        },
+        {
+          "icon": "FaComments",
+          "text": "Accompagnement individuel – Visios ou appels à chaque étape"
+        },
+        {
+          "icon": "FaSync",
+          "text": "Évolutif & pensé pour durer – Possibilité d'ajouts futurs"
+        }
+      ],
+      "tagline": "💼 Parfait pour les pros qui veulent un site unique, durable et pensé pour booster leur activité.",
+      "subscription": {
+        "price": "29€/mois",
+        "description": "Hébergement, maintenance, mises à jour et modifications incluses 7j/7, même les jours fériés et vacances."
+      }
+    }
+  ],
+  "subscriptionBenefits": [
+    {
+      "title": "Tranquillité d'esprit",
+      "description": "Votre site reste sécurisé et à jour en permanence"
+    },
+    {
+      "title": "Évolutivité",
+      "description": "Modifications et améliorations selon vos besoins"
+    },
+    {
+      "title": "Support réactif",
+      "description": "Je reste disponible et à l'écoute pour toute demande"
+    }
+  ]
+} 

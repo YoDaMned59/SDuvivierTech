@@ -1,0 +1,433 @@
+// Variables
+$primary-dark: #0a0a1f;
+$secondary-dark: #12122a;
+$accent-dark: #1a1a3a;
+$gold: #D4B98C;
+$gold-hover: #c4a97c;
+$text-light: #ffffff;
+$text-gray: #9ca3af;
+
+// Keyframes pour les animations
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.offres-page {
+  background-color: $primary-dark;
+  min-height: 100vh;
+  padding: 4rem 1rem;
+
+  .container {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  .page-title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: $gold;
+    text-align: center;
+    margin-bottom: 2rem;
+    animation: fadeInUp 0.8s ease-out forwards;
+    
+    @media (min-width: 768px) {
+      font-size: 3.5rem;
+    }
+  }
+
+  .offers-grid {
+    display: grid;
+    gap: 2rem;
+    margin-bottom: 4rem;
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .offer-card {
+      background-color: $secondary-dark;
+      border-radius: 1rem;
+      padding: 2rem;
+      border: 1px solid rgba($gold, 0.1);
+      transition: all 0.3s ease;
+      animation: scaleIn 0.6s ease-out forwards;
+      opacity: 0;
+      animation-delay: calc(var(--card-index, 0) * 0.2s);
+      position: relative;
+
+      &:hover {
+        border-color: rgba($gold, 0.3);
+        transform: translateY(-5px) scale(1.02);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .icon-wrapper {
+        width: 4rem;
+        height: 4rem;
+        background-color: $accent-dark;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1.5rem;
+        animation: scaleIn 0.5s ease-out forwards;
+        animation-delay: 0.3s;
+
+        svg {
+          color: $gold;
+          font-size: 1.5rem;
+          transition: transform 0.3s ease;
+        }
+
+        &:hover svg {
+          transform: scale(1.2) rotate(5deg);
+        }
+      }
+
+      .card-title {
+        color: $gold;
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 1rem;
+      }
+
+      .card-description {
+        color: $text-gray;
+        text-align: center;
+        margin-bottom: 1.5rem;
+      }
+
+      .info-bonus {
+        background-color: rgba($accent-dark, 0.6);
+        border-radius: 0.75rem;
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+        display: flex;
+        gap: 0.75rem;
+        align-items: flex-start;
+        border: 1px solid rgba($gold, 0.1);
+        animation: fadeInUp 0.5s ease-out forwards;
+        animation-delay: 0.3s;
+
+        .info-icon {
+          color: $gold;
+          font-size: 1.25rem;
+          flex-shrink: 0;
+          margin-top: 0.125rem;
+        }
+
+        .info-content {
+          flex: 1;
+
+          .info-text {
+            color: $text-light;
+            font-size: 0.875rem;
+            line-height: 1.4;
+            margin: 0 0 0.75rem 0;
+          }
+
+          .view-projects-btn {
+            display: inline-block;
+            background-color: rgba($gold, 0.15);
+            color: $gold;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            font-size: 0.875rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 1px solid rgba($gold, 0.3);
+            
+            &:hover {
+              background-color: $gold;
+              color: $primary-dark;
+              transform: translateX(5px);
+            }
+          }
+        }
+      }
+
+      .price {
+        text-align: center;
+        margin-bottom: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+
+        .amount {
+          font-size: 2.5rem;
+          font-weight: bold;
+          color: $gold;
+        }
+
+        .period {
+          color: $text-gray;
+          margin-left: 0.5rem;
+        }
+
+        .price-note {
+          color: $text-gray;
+          font-size: 0.875rem;
+          font-style: italic;
+        }
+      }
+
+      .badge {
+        position: absolute;
+        top: -12px;
+        right: -12px;
+        background: linear-gradient(135deg, $gold, darken($gold, 15%));
+        color: $primary-dark;
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        font-weight: 600;
+        font-size: 0.875rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        animation: fadeInUp 0.5s ease-out forwards;
+        z-index: 1;
+      }
+
+      .evolution-label {
+        background-color: rgba($accent-dark, 0.8);
+        color: $text-light;
+        padding: 0.75rem;
+        border-radius: 0.5rem;
+        margin: -1rem -1rem 1rem -1rem;
+        text-align: center;
+        font-size: 0.875rem;
+        border: 1px solid rgba($gold, 0.2);
+        animation: fadeInUp 0.5s ease-out forwards;
+      }
+
+      .features {
+        margin-bottom: 2rem;
+
+        .feature-item {
+          display: flex;
+          align-items: flex-start;
+          gap: 1rem;
+          color: $text-gray;
+          padding: 0.75rem 0;
+          border-bottom: 1px solid rgba($text-light, 0.1);
+          animation: slideInLeft 0.5s ease-out forwards;
+          opacity: 0;
+          animation-delay: calc(var(--feature-index, 0) * 0.1s + 0.5s);
+
+          &:last-child {
+            border-bottom: none;
+          }
+
+          .feature-icon {
+            color: $gold;
+            font-size: 1.25rem;
+            flex-shrink: 0;
+            opacity: 0.8;
+            transition: transform 0.3s ease;
+            margin-top: 0.125rem;
+
+            &:hover {
+              transform: scale(1.2);
+              opacity: 1;
+            }
+          }
+
+          .feature-text {
+            flex: 1;
+            line-height: 1.4;
+          }
+
+          &:hover .feature-icon {
+            transform: scale(1.2);
+            opacity: 1;
+          }
+        }
+      }
+
+      .tagline {
+        background-color: rgba($accent-dark, 0.6);
+        border-radius: 0.75rem;
+        padding: 1rem;
+        margin-bottom: 2rem;
+        text-align: center;
+        color: $text-light;
+        font-size: 0.9rem;
+        line-height: 1.4;
+        border: 1px solid rgba($gold, 0.2);
+        animation: fadeInUp 0.5s ease-out forwards;
+        animation-delay: 0.7s;
+      }
+
+      .subscription-box {
+        background-color: $accent-dark;
+        border-radius: 0.75rem;
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+        text-align: center;
+
+        .sub-title {
+          color: $gold;
+          font-weight: 600;
+          margin-bottom: 0.5rem;
+        }
+
+        .sub-price {
+          font-size: 1.5rem;
+          font-weight: bold;
+          color: $text-light;
+          margin: 0.5rem 0;
+        }
+
+        .sub-description {
+          color: $text-gray;
+          font-size: 0.875rem;
+        }
+      }
+
+      .cta-button {
+        display: block;
+        width: 100%;
+        background-color: $gold;
+        color: $primary-dark;
+        text-align: center;
+        padding: 1rem;
+        border-radius: 0.75rem;
+        font-weight: 600;
+        transition: background-color 0.3s ease;
+        animation: fadeInUp 0.5s ease-out forwards;
+        animation-delay: 0.8s;
+        opacity: 0;
+
+        &:hover {
+          background-color: $gold-hover;
+          transform: scale(1.05);
+        }
+      }
+
+      .view-projects-btn {
+        display: block;
+        text-align: center;
+        padding: 0.75rem;
+        margin: 1rem 0;
+        background-color: rgba($gold, 0.1);
+        color: $gold;
+        border-radius: 0.5rem;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        border: 1px solid rgba($gold, 0.2);
+
+        &:hover {
+          background-color: rgba($gold, 0.2);
+          transform: translateX(5px);
+        }
+      }
+    }
+  }
+
+  .subscription-section {
+    max-width: 64rem;
+    margin: 4rem auto 0;
+    animation: fadeInUp 1s ease-out forwards;
+    animation-delay: 1s;
+    opacity: 0;
+
+    .section-title {
+      font-size: 2rem;
+      font-weight: bold;
+      color: $gold;
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .benefits-grid {
+      display: grid;
+      gap: 2rem;
+
+      @media (min-width: 768px) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .benefit-item {
+        text-align: center;
+        animation: scaleIn 0.5s ease-out forwards;
+        opacity: 0;
+        animation-delay: calc(var(--benefit-index, 0) * 0.2s + 1.2s);
+
+        .benefit-title {
+          color: $gold;
+          font-size: 1.25rem;
+          font-weight: 600;
+          margin-bottom: 0.75rem;
+        }
+
+        .benefit-description {
+          color: $text-gray;
+        }
+      }
+    }
+  }
+
+  .templates-info {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    .folder-icon {
+      font-size: 1.5rem;
+      color: var(--primary-color);
+    }
+
+    p {
+      margin: 0;
+      font-size: 1rem;
+      color: var(--text-color);
+    }
+
+    .view-projects-btn {
+      margin-left: auto;
+      text-decoration: none;
+      color: var(--primary-color);
+      font-weight: 600;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: var(--accent-color);
+      }
+    }
+  }
+} 

@@ -61,6 +61,7 @@ function Navigation() {
           <Link to="/" onClick={() => setIsMenuOpen(false)}>Accueil</Link>
           <a href="#about" onClick={handleAboutClick}>À propos</a>
           <Link to="/services" onClick={() => setIsMenuOpen(false)}>Services</Link>
+          <Link to="/offres" onClick={() => setIsMenuOpen(false)}>Offres</Link>
           <Link to="/projects" onClick={() => setIsMenuOpen(false)}>Projets</Link>
           <Link to="/contact" onClick={() => setIsMenuOpen(false)}>Contact</Link>
         </div>

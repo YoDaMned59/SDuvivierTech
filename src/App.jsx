@@ -8,6 +8,7 @@ import Services from './pages/Services';
 import Contact from './pages/Contact';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import LegalNotice from './pages/LegalNotice';
+import Offres from './pages/Offres';
 import CookieBanner from './components/CookieBanner';
 import './styles/main.scss';
 
@@ -37,6 +38,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/services" element={<Services />} />
+            <Route path="/offres" element={<Offres />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/politique-de-confidentialite" element={<PrivacyPolicy />} />
             <Route path="/mentions-legales" element={<LegalNotice />} />

@@ -83,7 +83,7 @@ function Services() {
         <div className="pricing-box__content">
           <h3>💰 Des services adaptés à votre budget</h3>
           <p>
-            Chaque projet est unique, et son tarif aussi ! Développement web à partir de 750€.{' '}
+            Chaque projet est unique, et son tarif aussi ! Développement web à partir de 250€.{' '}
             <em>Parlons de votre projet et trouvons la meilleure solution pour vous.</em>
           </p>
           <p className="pricing-box__note">
