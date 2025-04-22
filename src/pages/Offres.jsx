@@ -1,10 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import offersData from '../data/offers.json';
 import { getIcon } from '../utils/iconUtils';
 import '../styles/Offres.scss';
 
 const Offres = () => {
+
+  const [selectedOffer, setSelectedOffer] = useState(null);
+
+  const handleOfferClick = (offer) => {
+    setSelectedOffer(offer);
+  };
+
   return (
     <div className="offres-page">
       <div className="container">
@@ -59,8 +66,8 @@ const Offres = () => {
               </div>
 
               {offer.price === "250€/site" && (
-                <Link to="/projets" className="view-projects-btn">
-                  Voir les templates disponibles →
+                <Link to="/projects" className="view-projects-btn">
+                  Voir les modèles disponibles →
                 </Link>
               )}
 
@@ -71,7 +78,7 @@ const Offres = () => {
               )}
 
               <div className="subscription-box">
-                <div className="sub-title">Abonnement optionnel</div>
+                <div className="sub-title">Abonnement</div>
                 <div className="sub-price">{offer.subscription.price}</div>
                 <div className="sub-description">
                   {offer.subscription.description}

@@ -30,10 +30,11 @@ const Projects = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    let isMounted = true;
+
     const fetchProjects = async () => {
       try {
         const timestamp = new Date().getTime();
-        console.log('Tentative de chargement des projets...');
         const response = await fetch(`${window.location.origin}/data/projects.json?t=${timestamp}`);
         
         if (!response.ok) {
@@ -41,25 +42,32 @@ const Projects = () => {
         }
 
         const data = await response.json();
-        console.log('Données reçues:', data);
         
-        if (Array.isArray(data.projects)) {
-          setProjects(data.projects);
-          setError(null);
-          console.log('Projets chargés avec succès:', data.projects);
-        } else {
-          throw new Error('Format de données invalide');
+        if (isMounted) {
+          if (Array.isArray(data.projects)) {
+            setProjects(data.projects);
+            setError(null);
+          } else {
+            throw new Error('Format de données invalide');
+          }
         }
       } catch (error) {
-        console.error('Erreur détaillée:', error);
-        setError('Impossible de charger les projets. Veuillez réessayer plus tard.');
-        setProjects([]);
+        if (isMounted) {
+          setError('Impossible de charger les projets. Veuillez réessayer plus tard.');
+          setProjects([]);
+        }
       } finally {
-        setLoading(false);
+        if (isMounted) {
+          setLoading(false);
+        }
       }
     };
 
     fetchProjects();
+
+    return () => {
+      isMounted = false;
+    };
   }, []);
 
   if (loading) {

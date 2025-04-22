@@ -13,7 +13,7 @@
       "features": [
         {
           "icon": "FaCheck",
-          "text": "Site vitrine professionnel – Basé sur un de mes modèles éprouvés"
+          "text": "Site vitrine professionnel – choix parmis 5 modèles pré-existants"
         },
         {
           "icon": "FaPalette",
@@ -21,11 +21,11 @@
         },
         {
           "icon": "FaRocket",
-          "text": "Mise en ligne rapide – Site prêt en 3 à 5 jours"
+          "text": "Mise en ligne rapide – Site prêt en 5 jours"
         },
         {
           "icon": "FaCompass",
-          "text": "Contenu guidé – Je vous aide à structurer vos sections"
+          "text": "Contenu guidé – Je vous accompagne pour structurer votre site"
         },
         {
           "icon": "FaSync",
@@ -34,7 +34,7 @@
       ],
       "tagline": "🔰 Idéal pour lancer votre activité avec un site professionnel, sans complexité ni délai.",
       "subscription": {
-        "price": "19€/mois",
+        "price": "19€/mois*",
         "description": "Hébergement, maintenance, mises à jour et modifications incluses 7j/7."
       }
     },
@@ -68,7 +68,7 @@
       ],
       "tagline": "💼 Parfait pour les pros qui veulent un site unique, durable et pensé pour booster leur activité.",
       "subscription": {
-        "price": "29€/mois",
+        "price": "29€/mois*",
         "description": "Hébergement, maintenance, mises à jour et modifications incluses 7j/7, même les jours fériés et vacances."
       }
     }

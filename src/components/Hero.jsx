@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import content from '../data/content.json';
 import TypingEffect from './TypingEffect';
 
 
@@ -98,7 +99,7 @@ function Hero() {
         
         <p className="hero__description">
           <TypingEffect 
-            text="Je transforme vos idées en sites web modernes et performants. Spécialisé dans la création de sites vitrines et d'applications web sur mesure." 
+            text={content.hero.description}
             speed={30}
             delay={1500}
           />
@@ -110,8 +111,8 @@ function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8 }}
         >
-          <Link to="/projects" className="contact-button">
-            Voir mes projets
+          <Link to="/offres" className="contact-button">
+            Voir mes offres
           </Link>
           <Link to="/contact" className="contact-button">
             Me contacter
