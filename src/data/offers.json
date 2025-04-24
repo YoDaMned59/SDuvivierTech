@@ -35,7 +35,24 @@
       "tagline": "🔰 Idéal pour lancer votre activité avec un site professionnel, sans complexité ni délai.",
       "subscription": {
         "price": "19€/mois*",
-        "description": "Hébergement, maintenance, mises à jour et modifications incluses 7j/7."
+        "services_inclus": [
+          {
+            "titre": "Hébergement sécurisé",
+            "description": "Votre site est hébergé sur des serveurs fiables et protégés."
+          },
+          {
+            "titre": "Maintenance technique",
+            "description": "Mises à jour régulières du CMS et des plugins pour assurer la stabilité du site."
+          },
+          {
+            "titre": "Modifications mineures",
+            "description": "Mise à jour de textes, images, liens, etc."
+          },
+          {
+            "titre": "Support client",
+            "description": "Assistance disponible 5 jours par semaine."
+          }
+        ]
       }
     },
     {
@@ -69,7 +86,28 @@
       "tagline": "💼 Parfait pour les pros qui veulent un site unique, durable et pensé pour booster leur activité.",
       "subscription": {
         "price": "29€/mois*",
-        "description": "Hébergement, maintenance, mises à jour et modifications incluses 7j/7, même les jours fériés et vacances."
+        "services_inclus": [
+          {
+            "titre": "Hébergement sécurisé",
+            "description": "Votre site est hébergé sur des serveurs fiables et protégés."
+          },
+          {
+            "titre": "Maintenance technique",
+            "description": "Mises à jour régulières du CMS et des plugins pour assurer la stabilité du site."
+          },
+          {
+            "titre": "Modifications illimitées",
+            "description": "Ajustements et mises à jour de contenu sans restriction."
+          },
+          {
+            "titre": "Rapports mensuels",
+            "description": "Analyse des performances du site pour suivre son évolution."
+          },
+          {
+            "titre": "Support prioritaire",
+            "description": "Assistance disponible même les jours fériés et pendant les vacances."
+          }
+        ]
       }
     }
   ],

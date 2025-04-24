@@ -83,6 +83,20 @@ const Offres = () => {
                 <div className="sub-description">
                   {offer.subscription.description}
                 </div>
+                <div className="services-inclus">
+                  <h3>Services inclus :</h3>
+                  <ul>
+                    {offer.subscription.services_inclus.map((service, serviceIndex) => (
+                      <li key={serviceIndex} className="service-item">
+                        <div className="service-title">{service.titre}</div>
+                        <div className="service-description">{service.description}</div>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="sub-engagement">
+                  Engagement 1 an à partir de la mise en ligne
+                </div>
               </div>
 
               <Link to="/contact" className="cta-button">
@@ -91,7 +105,6 @@ const Offres = () => {
             </div>
           ))}
         </div>
-
         <div className="subscription-section">
           <h2 className="section-title">
             Pourquoi souscrire à un abonnement ?

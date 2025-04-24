@@ -310,6 +310,69 @@ $text-gray: #9ca3af;
         .sub-description {
           color: $text-gray;
           font-size: 0.875rem;
+          margin-bottom: 0.75rem;
+        }
+
+        .services-inclus {
+          text-align: left;
+          margin: 1.5rem 0;
+          padding: 1rem;
+          background-color: rgba($primary-dark, 0.3);
+          border-radius: 0.5rem;
+          border: 1px solid rgba($gold, 0.1);
+
+          h3 {
+            color: $gold;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            text-align: center;
+          }
+
+          ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+          }
+
+          .service-item {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba($text-light, 0.1);
+
+            &:last-child {
+              border-bottom: none;
+            }
+
+            .service-title {
+              color: $text-light;
+              font-weight: 600;
+              margin-bottom: 0.25rem;
+              font-size: 0.95rem;
+            }
+
+            .service-description {
+              color: $text-gray;
+              font-size: 0.85rem;
+              line-height: 1.4;
+            }
+          }
+        }
+
+        .sub-engagement {
+          color: $gold;
+          font-size: 0.95rem;
+          font-weight: 600;
+          padding: 1rem;
+          margin-top: 1.5rem;
+          background-color: rgba($primary-dark, 0.3);
+          border-radius: 0.5rem;
+          border: 1px solid rgba($gold, 0.2);
+          text-align: center;
+          transition: all 0.3s ease;
+
+          &:hover {
+            background-color: rgba($primary-dark, 0.5);
+            border-color: rgba($gold, 0.4);
+          }
         }
       }
 

@@ -25,8 +25,8 @@
 
   .typing-effect {
     display: inline-block;
-    min-width: 300px; // Largeur minimale fixe
-    min-height: 1.5em; // Hauteur minimale fixe
+    min-width: 300px; 
+    min-height: 1.5em; 
     position: relative;
     
     &::after {
@@ -40,14 +40,21 @@
   &__subtitle {
     font-size: 1.5rem;
     margin-bottom: 2rem;
-    min-height: 2rem; // Hauteur fixe pour éviter le CLS
+    min-height: 2rem; 
   }
 
   &__description {
     font-size: 1.1rem;
     line-height: 1.6;
     margin-bottom: 2rem;
-    min-height: 3rem; // Hauteur fixe pour éviter le CLS
+    min-height: 3rem;
+
+    .hero__price {
+      color: $gold;
+      font-weight: 600;
+      margin-left: 0.5rem;
+      font-size: 1.2rem;
+    }
   }
 }
 
