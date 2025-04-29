@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import '../styles/main.scss';
+import { Helmet } from 'react-helmet';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -93,6 +94,10 @@ const Projects = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
     >
+      <Helmet>
+        <title>Portfolio | Projets réalisés - SDuvivierTech</title>
+        <meta name="description" content="Découvrez les projets web réalisés par Sébastien Duvivier : sites vitrines, applications web, interfaces modernes et performantes." />
+      </Helmet>
       <h1 className="projects-page__title">Mes Projets</h1>
       {projects.length === 0 ? (
         <div className="no-projects">
@@ -114,7 +119,7 @@ const Projects = () => {
               <div className="project-card__image">
                 <img 
                   src={project.image}
-                  alt={project.title}
+                  alt={`Aperçu du projet ${project.title}`}
                   width={800}
                   height={600}
                   loading="lazy"

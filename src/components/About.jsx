@@ -1,12 +1,18 @@
 import { motion } from 'framer-motion';
 import profileImage from '../assets/Profile.JPG';
+import { Helmet } from 'react-helmet';
 
 function About() {
   return (
     <section id="about" className="about">
+      <Helmet>
+        <title>À propos | Sébastien Duvivier - Développeur Web à Lille</title>
+        <meta name="description" content="Découvrez le parcours, les valeurs et l'expertise de Sébastien Duvivier, développeur web freelance à Lille, spécialisé en création de sites modernes et performants." />
+        <meta name="keywords" content="à propos, développeur web, freelance, Lille, parcours, expertise, valeurs, création site web, site vitrine, application web, Nord" />
+      </Helmet>
       <div className="about__container">
         <div className="about__content">
-          <h2 className="about__title">✨ Un site qui vous ressemble, tout simplement.</h2>
+          <h1 className="about__title">✨ Un site qui vous ressemble, tout simplement.</h1>
           
           <div className="about__text">
             <p>
@@ -35,11 +41,11 @@ function About() {
           >
             <img 
               src={profileImage} 
-              alt="Sébastien Duvivier" 
+              alt="Portrait de Sébastien Duvivier, développeur web à Lille, Sébastien Duvivier" 
               className="about__image"
               width={400}
               height={400}
-              loading="eager"
+              loading="lazy"
               decoding="async"
               fetchpriority="high"
             />

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import offersData from '../data/offers.json';
 import { getIcon } from '../utils/iconUtils';
 import '../styles/Offres.scss';
+import { Helmet } from 'react-helmet';
 
 const Offres = () => {
 
@@ -14,6 +15,11 @@ const Offres = () => {
 
   return (
     <div className="offres-page">
+      <Helmet>
+        <title>Offres & Tarifs | Création de site web - SDuvivierTech</title>
+        <meta name="description" content="Découvrez mes offres de création de site web : clé en main, sur-mesure, abonnements, services inclus et tarifs adaptés à vos besoins professionnels." />
+        <meta name="keywords" content="offres, tarifs, création site web, site vitrine, sur-mesure, abonnement, services inclus, freelance, Lille, Nord, développeur web" />
+      </Helmet>
       <div className="container">
         <h1 className="page-title">
           Mes Offres

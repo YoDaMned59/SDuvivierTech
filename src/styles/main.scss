@@ -1438,21 +1438,23 @@ body {
 
 .contact-button {
   display: inline-block;
-  background: $text-gold;
-  color: $background-dark;
-  padding: 1rem 2.5rem;
-  border-radius: 50px;
-  font-size: 1.2rem;
-  font-weight: 600;
+  background: transparent;
+  color: $text-gold;
+  padding: 0.65rem 1.5rem;
+  border-radius: 18px;
+  font-size: 1rem;
+  font-weight: 500;
   text-decoration: none;
   transition: all 0.3s ease;
-  border: 2px solid $text-gold;
+  border: 1.5px solid $text-gold;
+  margin: 0 0.5rem;
+  box-shadow: none;
 
   &:hover {
-    background: transparent;
-    color: $text-gold;
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba($text-gold, 0.2);
+    background: $text-gold;
+    color: $background-dark;
+    transform: translateY(-2px);
+    box-shadow: 0 3px 10px rgba($text-gold, 0.10);
   }
 }
 

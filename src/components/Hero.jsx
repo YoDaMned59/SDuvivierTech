@@ -1,8 +1,10 @@
 import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { SiCalendly } from 'react-icons/si';
 import content from '../data/content.json';
 import TypingEffect from './TypingEffect';
+import { Helmet } from 'react-helmet';
 
 
 function Hero() {
@@ -67,6 +69,10 @@ function Hero() {
 
   return (
     <div className="hero-container">
+      <Helmet>
+        <title>Développeur Web Freelance à Meteren | Création de sites modernes</title>
+        <meta name="description" content="Développeur web à Meteren (59), création de sites vitrines et applications web modernes. Solutions sur-mesure, expertise front-end, accompagnement personnalisé." />
+      </Helmet>
       <canvas
         ref={canvasRef}
         className="hero__matrix"
@@ -81,14 +87,16 @@ function Hero() {
         }}
       />
       <div className="hero">
-        <h1 className="hero__title">
+        <h1 className="hero__title" style={{position: 'absolute', left: '-9999px', width: '1px', height: '1px', overflow: 'hidden'}}>
+          Développeur web freelance à Meteren (Nord, 59) – Création de site vitrine, application web moderne, accompagnement digital, référencement SEO, front-end, solutions sur-mesure
+        </h1>
+        <div aria-hidden="false" style={{fontSize: '2.8rem', fontWeight: 700, lineHeight: 1.1, margin: '1.2rem 0'}}>
           <TypingEffect 
-            text="Développeur Web" 
+            text={content.hero.title}
             speed={100}
             delay={2000}
           />
-        </h1>
-        
+        </div>
         <h2 className="hero__subtitle">
           <TypingEffect 
             text="Créons ensemble votre présence en ligne" 
@@ -96,7 +104,9 @@ function Hero() {
             delay={1000}
           />
         </h2>
-        
+        <h2 style={{fontSize: '1.2rem', color: '#D4B98C', marginTop: '1.5rem', textAlign: 'center', fontWeight: 500}}>
+          Mes services de développement web et accompagnement digital
+        </h2>
         <p className="hero__description">
           <TypingEffect 
             text={content.hero.description}
@@ -105,19 +115,52 @@ function Hero() {
           />
         </p>
         
-        <motion.div
-          className="hero__buttons"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8 }}
-        >
-          <Link to="/offres" className="contact-button">
-            Voir mes offres
-          </Link>
-          <Link to="/contact" className="contact-button">
-            Me contacter
-          </Link>
-        </motion.div>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%' }}>
+          <span style={{
+            background: '#D4B98C',
+            color: '#1A1A3F',
+            borderRadius: '20px',
+            padding: '0.35rem 1.2rem',
+            fontWeight: '600',
+            fontSize: '0.95rem',
+            boxShadow: '0 1px 6px rgba(212,185,140,0.10)',
+            letterSpacing: '0.2px',
+            border: '1.5px solid #D4B98C',
+            marginBottom: '1.1rem',
+            zIndex: 2,
+            position: 'relative',
+            display: 'inline-block',
+            textAlign: 'center',
+          }}>
+            Premier rendez-vous gratuit
+          </span>
+          <motion.div
+            className="hero__buttons"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8 }}
+            style={{ display: 'flex', flexDirection: 'row', gap: '1.2rem', justifyContent: 'center', alignItems: 'center', width: '100%' }}
+          >
+            <Link to="/offres" className="contact-button">
+              Voir mes offres
+            </Link>
+            <a 
+              href="https://calendly.com/sduviviertech" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="contact-button"
+              style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}
+            >
+              <SiCalendly size={20} />
+              Prendre rendez-vous
+            </a>
+          </motion.div>
+          <div style={{marginTop: '0.7rem', textAlign: 'center'}}>
+            <Link to="/contact" style={{ color: '#D4B98C', fontSize: '1rem', textDecoration: 'underline', opacity: 0.8 }}>
+              Ou envoyez-moi un message
+            </Link>
+          </div>
+        </div>
       </div>
     </div>
   );

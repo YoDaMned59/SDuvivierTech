@@ -20,6 +20,11 @@ function Home() {
     <>
       <Hero />
       <About />
+      <div className="about__text" style={{maxWidth: 700, margin: '2.5rem auto 0 auto'}}>
+        <p>
+          Basé à Meteren dans le Nord (59), près de Bailleul et Lille, j'accompagne les entrepreneurs, commerçants et PME de la région et de toute la France dans la création de sites web modernes, performants et sur-mesure. Proximité, écoute et réactivité sont au cœur de ma démarche. Retrouvez-moi aussi sur <a href="https://www.linkedin.com/in/duviviersebastien/" target="_blank" rel="noopener noreferrer" style={{color:'#D4B98C',textDecoration:'underline'}}>LinkedIn</a> et <a href="https://www.facebook.com/profile.php?id=61573940604104" target="_blank" rel="noopener noreferrer" style={{color:'#D4B98C',textDecoration:'underline'}}>Facebook</a> pour suivre mes actualités et conseils web.
+        </p>
+      </div>
     </>
   );
 }

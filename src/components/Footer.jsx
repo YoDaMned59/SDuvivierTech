@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 import { FiLinkedin, FiFacebook } from 'react-icons/fi';
+import { FaGithub, FaTwitter, FaLinkedin } from 'react-icons/fa';
+import { SiCalendly } from 'react-icons/si';
 import content from '../data/content.json';
 
 function Footer() {
@@ -49,24 +51,29 @@ function Footer() {
         </div>
 
         <div className="footer__bottom">
-          <div className="social-links" style={{ marginBottom: '1rem' }}>
-            <a 
-              href={social.linkedin} 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="footer__link"
-              aria-label="Visiter notre page LinkedIn"
-            >
-              <FiLinkedin size={24} />
-            </a>
-            <a 
-              href={social.facebook} 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="footer__link"
-              aria-label="Visiter notre page Facebook"
-            >
-              <FiFacebook size={24} />
+          <div className="social-links">
+            {social.github && (
+              <a href={social.github} target="_blank" rel="noopener noreferrer">
+                <FaGithub />
+              </a>
+            )}
+            {social.linkedin && (
+              <a href={social.linkedin} target="_blank" rel="noopener noreferrer">
+                <FaLinkedin />
+              </a>
+            )}
+            {social.twitter && (
+              <a href={social.twitter} target="_blank" rel="noopener noreferrer">
+                <FaTwitter />
+              </a>
+            )}
+            {social.facebook && (
+              <a href={social.facebook} target="_blank" rel="noopener noreferrer">
+                <FiFacebook />
+              </a>
+            )}
+            <a href="https://calendly.com/sduviviertech" target="_blank" rel="noopener noreferrer">
+              <SiCalendly />
             </a>
           </div>
           <p className="footer__text" style={{ fontSize: '0.9rem', marginBottom: '0.5rem' }}>

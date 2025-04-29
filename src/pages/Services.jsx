@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { FiCode, FiLayout, FiSettings } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 import content from '../data/content.json';
+import { Helmet } from 'react-helmet';
 
 const iconMap = {
   code: <FiCode size={40} />,
@@ -33,6 +34,11 @@ const itemVariants = {
 function Services() {
   return (
     <div className="services-page">
+      <Helmet>
+        <title>Services Web | Création de sites et applications - SDuvivierTech</title>
+        <meta name="description" content="Découvrez mes services de développement web : création de sites vitrines, applications sur-mesure, intégration front-end, maintenance et support technique à Lille et dans le Nord." />
+        <meta name="keywords" content="services web, création site, application web, intégration front-end, maintenance, support, Lille, Nord, freelance, développeur web, site vitrine, sur-mesure" />
+      </Helmet>
       <motion.h1 
         className="services-page__title"
         initial={{ y: -20, opacity: 0 }}

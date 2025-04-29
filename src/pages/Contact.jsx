@@ -1,9 +1,11 @@
 import { motion } from 'framer-motion';
 import { FiMail, FiPhone, FiMapPin, FiGithub, FiLinkedin, FiFacebook } from 'react-icons/fi';
+import { SiCalendly } from 'react-icons/si';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import emailjs from '@emailjs/browser';
 import content from '../data/content.json';
+import { Helmet } from 'react-helmet';
 
 // Initialisation d'EmailJS
 emailjs.init("BXDcz7k22yRhBmZY5");
@@ -90,6 +92,11 @@ function Contact() {
 
   return (
     <div className="contact-page">
+      <Helmet>
+        <title>Contact | Demandez un devis ou un rendez-vous - SDuvivierTech</title>
+        <meta name="description" content="Contactez Sébastien Duvivier, développeur web freelance à Lille, pour toute demande de devis, rendez-vous ou information sur la création de votre site web." />
+        <meta name="keywords" content="contact, devis, rendez-vous, développeur web, freelance, Lille, Nord, création site web, site vitrine, application web" />
+      </Helmet>
       <motion.h1 
         className="contact-page__title"
         initial={{ y: -20, opacity: 0 }}
@@ -131,6 +138,9 @@ function Contact() {
               </a>
               <a href={content.contact.social.facebook} target="_blank" rel="noopener noreferrer">
                 <FiFacebook />
+              </a>
+              <a href="https://calendly.com/sduviviertech" target="_blank" rel="noopener noreferrer">
+                <SiCalendly />
               </a>
             </div>
           </div>

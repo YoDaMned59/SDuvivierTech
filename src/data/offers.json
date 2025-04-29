@@ -9,7 +9,7 @@
         "icon": "FaInfoCircle",
         "text": "Les templates proposés sont basés sur des sites réels que j'ai déjà créés (voir la section Projets), pour vous garantir un rendu professionnel et éprouvé."
       },
-      "price": "250€/site",
+      "price": "A partir de 250€",
       "features": [
         {
           "icon": "FaCheck",
@@ -34,7 +34,7 @@
       ],
       "tagline": "🔰 Idéal pour lancer votre activité avec un site professionnel, sans complexité ni délai.",
       "subscription": {
-        "price": "19€/mois*",
+        "price": "Abonnement optionnel de 19€/mois*",
         "services_inclus": [
           {
             "titre": "Hébergement sécurisé",
@@ -60,7 +60,7 @@
       "badge": "🔥 Parfait pour se démarquer",
       "title": "Offre Sur-Mesure",
       "description": "Un site unique, pensé pour vous et vos objectifs",
-      "price": "750€/site",
+      "price": "A partir de 750€",
       "features": [
         {
           "icon": "FaChartLine",
@@ -85,7 +85,7 @@
       ],
       "tagline": "💼 Parfait pour les pros qui veulent un site unique, durable et pensé pour booster leur activité.",
       "subscription": {
-        "price": "29€/mois*",
+        "price": "Abonnement optionnel de 29€/mois*",
         "services_inclus": [
           {
             "titre": "Hébergement sécurisé",

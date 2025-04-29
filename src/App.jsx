@@ -11,6 +11,7 @@ import LegalNotice from './pages/LegalNotice';
 import Offres from './pages/Offres';
 import CookieBanner from './components/CookieBanner';
 import './styles/main.scss';
+import { Helmet } from 'react-helmet';
 
 // Composant pour défiler vers le haut à chaque changement de route
 function ScrollToTop() {
@@ -32,6 +33,17 @@ function App() {
     <Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
       <div className="app">
         <ScrollToTop />
+        <Helmet>
+          <title>Développeur Web Freelance à Lille | Création de sites modernes</title>
+          <meta
+            name="description"
+            content="Développeur web freelance à Lille, je crée des sites vitrines et applications web modernes, performantes et sur-mesure pour votre activité. Contactez-moi pour booster votre présence en ligne !"
+          />
+          <meta
+            name="keywords"
+            content="développeur web, freelance, Lille, création site web, site vitrine, application web, web design, front-end, React, JavaScript, site professionnel, site sur-mesure, référencement, SEO, Nord, Hauts-de-France"
+          />
+        </Helmet>
         <Navigation />
         <main>
           <Routes>
