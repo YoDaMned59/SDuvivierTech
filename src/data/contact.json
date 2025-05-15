@@ -1,0 +1,11 @@
+{
+  "contact": {
+    "email": "contact@exemple.com",
+    "phone": "0123456789",
+    "location": "Ville, Pays",
+    "social": {
+      "linkedin": "https://linkedin.com",
+      "facebook": "https://facebook.com"
+    }
+  }
+} 

@@ -13,6 +13,7 @@
     "sass": "^1.69.5"
   },
   "devDependencies": {
+    "fs-extra": "^11.3.0",
     "react-scripts": "5.0.1"
   },
   "scripts": {

@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { SiCalendly } from 'react-icons/si';
 import content from '../data/content.json';
 import TypingEffect from './TypingEffect';
@@ -9,6 +9,8 @@ import { Helmet } from 'react-helmet';
 
 function Hero() {
   const canvasRef = useRef(null);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -66,6 +68,40 @@ function Hero() {
       window.removeEventListener('resize', resizeCanvas);
     };
   }, []);
+
+  // Ajout de la fonction de scroll vers la section offres
+  const handleScrollToOffres = (e) => {
+    e.preventDefault();
+    const scrollToSection = () => {
+      const section = document.querySelector('.offres-section');
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+    };
+    if (location.pathname === '/') {
+      scrollToSection();
+    } else {
+      navigate('/');
+      setTimeout(scrollToSection, 100);
+    }
+  };
+
+  // Ajout de la fonction de scroll vers la section contact
+  const handleScrollToContact = (e) => {
+    e.preventDefault();
+    const scrollToSection = () => {
+      const section = document.querySelector('.contact-section');
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+    };
+    if (location.pathname === '/') {
+      scrollToSection();
+    } else {
+      navigate('/');
+      setTimeout(scrollToSection, 100);
+    }
+  };
 
   return (
     <div className="hero-container">
@@ -132,7 +168,7 @@ function Hero() {
             display: 'inline-block',
             textAlign: 'center',
           }}>
-            Premier rendez-vous gratuit
+            rendez-vous gratuit
           </span>
           <motion.div
             className="hero__buttons"
@@ -141,9 +177,13 @@ function Hero() {
             transition={{ delay: 0.8 }}
             style={{ display: 'flex', flexDirection: 'row', gap: '1.2rem', justifyContent: 'center', alignItems: 'center', width: '100%' }}
           >
-            <Link to="/offres" className="contact-button">
+            <a
+              href="#offres"
+              className="contact-button"
+              onClick={handleScrollToOffres}
+            >
               Voir mes offres
-            </Link>
+            </a>
             <a 
               href="https://calendly.com/sduviviertech" 
               target="_blank" 
@@ -156,9 +196,9 @@ function Hero() {
             </a>
           </motion.div>
           <div style={{marginTop: '0.7rem', textAlign: 'center'}}>
-            <Link to="/contact" style={{ color: '#D4B98C', fontSize: '1rem', textDecoration: 'underline', opacity: 0.8 }}>
+            <a href="#contact" onClick={handleScrollToContact} style={{ color: '#D4B98C', fontSize: '1rem', textDecoration: 'underline', opacity: 0.8 }}>
               Ou envoyez-moi un message
-            </Link>
+            </a>
           </div>
         </div>
       </div>

@@ -8,6 +8,22 @@ function Footer() {
   const { email, phone, address, social } = content.contact;
   const currentYear = new Date().getFullYear();
 
+  const handleFooterNav = (e, sectionClass) => {
+    e.preventDefault();
+    const scrollToSection = () => {
+      const section = document.querySelector(sectionClass);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+    };
+    if (window.location.pathname === '/') {
+      scrollToSection();
+    } else {
+      window.location.href = '/';
+      setTimeout(scrollToSection, 100);
+    }
+  };
+
   return (
     <footer className="footer">
       <div className="footer__container">
@@ -34,10 +50,9 @@ function Footer() {
           <div className="footer__section">
             <h3 className="footer__title">Liens rapides</h3>
             <ul className="footer__links">
-              <li><Link to="/" className="footer__link">Accueil</Link></li>
-              <li><Link to="/services" className="footer__link">Services</Link></li>
-              <li><Link to="/projects" className="footer__link">Projets</Link></li>
-              <li><Link to="/contact" className="footer__link">Contact</Link></li>
+              <li><a href="#services" onClick={e => handleFooterNav(e, '.services-section')} className="footer__link">Services</a></li>
+              <li><a href="#projects" onClick={e => handleFooterNav(e, '.projects-section')} className="footer__link">Projets</a></li>
+              <li><a href="#contact" onClick={e => handleFooterNav(e, '.contact-section')} className="footer__link">Contact</a></li>
             </ul>
           </div>
 

@@ -76,6 +76,28 @@ const LegalNotice = () => {
             les tribunaux français seront seuls compétents.
           </p>
         </section>
+
+        <section>
+          <h2>8. Conditions des offres et abonnements</h2>
+          <p>
+            <strong>Offre Clé en Main :</strong> Site vitrine professionnel à partir de 290 €, incluant l’hébergement et la maintenance pendant 1 an. Après cette période, un abonnement mensuel de 14,90 € (sans engagement) est proposé pour la poursuite de l’hébergement, de la maintenance et du support. Le client peut résilier à tout moment sans frais. En cas de non-renouvellement, l’hébergement sera suspendu après un délai de 7 jours pour permettre la récupération des données.
+          </p>
+          <p>
+            <strong>Offre Sur-Mesure :</strong> Site personnalisé à partir de 750 €, incluant l’hébergement et la maintenance pendant 1 an. Après cette période, un abonnement mensuel de 19,90 € (sans engagement) est proposé pour la poursuite de l’hébergement, de la maintenance, des modifications illimitées et du support prioritaire. Le client peut résilier à tout moment sans frais. En cas de non-renouvellement, l’hébergement sera suspendu après un délai de 7 jours pour permettre la récupération des données.
+          </p>
+          <p>
+            <strong>Abonnements sans engagement :</strong> Les abonnements mensuels proposés après la première année sont sans engagement. Le client peut arrêter l’abonnement à tout moment, sans justification ni frais de résiliation.
+          </p>
+          <p>
+            <strong>Services inclus :</strong> Hébergement sécurisé, maintenance continue, support client (5j/7 pour l’offre Clé en Main, prioritaire pour l’offre Sur-Mesure), modifications mineures ou illimitées selon l’offre, et rapports mensuels pour l’offre Sur-Mesure.
+          </p>
+          <p>
+            <strong>Propriété du site :</strong> Le client reste propriétaire de l’ensemble des contenus et du nom de domaine. Le code source et les éléments graphiques réalisés sur-mesure lui sont cédés après paiement intégral des sommes dues.
+          </p>
+          <p>
+            <strong>Limitation de responsabilité :</strong> SDuvivierTech ne saurait être tenu responsable d’une interruption de service indépendante de sa volonté, ou de la perte de données due à un cas de force majeure.
+          </p>
+        </section>
       </div>
     </div>
   );

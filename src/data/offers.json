@@ -4,54 +4,22 @@
       "icon": "FaRocket",
       "badge": "⭐ Idéal pour démarrer rapidement",
       "title": "Offre Clé en Main",
-      "description": "Pour démarrer rapidement avec un site pro et élégant",
-      "infoBonus": {
-        "icon": "FaInfoCircle",
-        "text": "Les templates proposés sont basés sur des sites réels que j'ai déjà créés (voir la section Projets), pour vous garantir un rendu professionnel et éprouvé."
-      },
-      "price": "A partir de 250€",
+      "description": "Lancez votre activité avec un site pro, élégant et efficace.",
+      "price": "À partir de 290 €",
       "features": [
-        {
-          "icon": "FaCheck",
-          "text": "Site vitrine professionnel – choix parmis 5 modèles pré-existants"
-        },
-        {
-          "icon": "FaPalette",
-          "text": "Personnalisation légère – Logo, couleurs, textes, images"
-        },
-        {
-          "icon": "FaRocket",
-          "text": "Mise en ligne rapide – Site prêt en 5 jours"
-        },
-        {
-          "icon": "FaCompass",
-          "text": "Contenu guidé – Je vous accompagne pour structurer votre site"
-        },
-        {
-          "icon": "FaSync",
-          "text": "Évolutif – Possibilité de passer à l'offre sur-mesure plus tard"
-        }
+        { "icon": "FaCheck", "text": "Site vitrine professionnel – Choix parmi 5 modèles de sites pré-existants." },
+        { "icon": "FaPalette", "text": "Personnalisation légère – Adaptation du logo, des couleurs, des textes et des images." },
+        { "icon": "FaRocket", "text": "Mise en ligne rapide – Votre site est prêt en 5 jours." },
+        { "icon": "FaCompass", "text": "Accompagnement pour le contenu – Je vous aide à structurer votre site pour qu'il soit efficace et professionnel." },
+        { "icon": "FaSync", "text": "Évolutif – Vous pouvez passer à l'offre sur-mesure quand vous le souhaitez." }
       ],
-      "tagline": "🔰 Idéal pour lancer votre activité avec un site professionnel, sans complexité ni délai.",
+      "tagline": "🔰 Idéal pour ceux qui souhaitent un site professionnel, simple et rapide à lancer, sans complexité.",
       "subscription": {
-        "price": "Abonnement optionnel de 19€/mois*",
+        "price": "Après 1 an : Abonnement mensuel de 14,90 €/mois, sans engagement",
         "services_inclus": [
-          {
-            "titre": "Hébergement sécurisé",
-            "description": "Votre site est hébergé sur des serveurs fiables et protégés."
-          },
-          {
-            "titre": "Maintenance technique",
-            "description": "Mises à jour régulières du CMS et des plugins pour assurer la stabilité du site."
-          },
-          {
-            "titre": "Modifications mineures",
-            "description": "Mise à jour de textes, images, liens, etc."
-          },
-          {
-            "titre": "Support client",
-            "description": "Assistance disponible 5 jours par semaine."
-          }
+          { "titre": "Hébergement sécurisé", "description": "Hébergement inclus pendant 1 an, puis renouvelable." },
+          { "titre": "Maintenance continue", "description": "Mises à jour régulières et modifications mineures (textes, images, liens, etc.)." },
+          { "titre": "Support client", "description": "Support disponible 5 jours par semaine." }
         ]
       }
     },
@@ -59,59 +27,28 @@
       "icon": "FaTools",
       "badge": "🔥 Parfait pour se démarquer",
       "title": "Offre Sur-Mesure",
-      "description": "Un site unique, pensé pour vous et vos objectifs",
-      "price": "A partir de 750€",
+      "description": "Un site unique, conçu pour vos objectifs spécifiques.",
+      "price": "À partir de 750 €",
       "features": [
-        {
-          "icon": "FaChartLine",
-          "text": "Stratégie personnalisée – Site conçu pour convertir selon vos objectifs"
-        },
-        {
-          "icon": "FaPalette",
-          "text": "Identité visuelle sur-mesure – Charte graphique, ambiance, visuels, cohérence globale"
-        },
-        {
-          "icon": "FaCog",
-          "text": "Fonctionnalités avancées – Blog, modules spécifiques, outils pros"
-        },
-        {
-          "icon": "FaComments",
-          "text": "Accompagnement individuel – Visios ou appels à chaque étape"
-        },
-        {
-          "icon": "FaSync",
-          "text": "Évolutif & pensé pour durer – Possibilité d'ajouts futurs"
-        }
+        { "icon": "FaChartLine", "text": "Stratégie personnalisée – Un site conçu pour optimiser vos conversions en fonction de vos objectifs." },
+        { "icon": "FaPalette", "text": "Identité visuelle sur-mesure – Création d'une charte graphique unique, avec une ambiance cohérente et des visuels adaptés à votre activité." },
+        { "icon": "FaCog", "text": "Fonctionnalités avancées – Blog, modules spécifiques, outils professionnels adaptés à vos besoins." },
+        { "icon": "FaComments", "text": "Accompagnement individuel – Suivi personnalisé avec des visios ou appels à chaque étape du projet." },
+        { "icon": "FaSync", "text": "Évolutif & pensé pour durer – Vous pourrez ajouter de nouvelles fonctionnalités à votre site à tout moment." }
       ],
-      "tagline": "💼 Parfait pour les pros qui veulent un site unique, durable et pensé pour booster leur activité.",
+      "tagline": "💼 Parfait pour les professionnels qui veulent un site sur-mesure, évolutif et optimisé pour leur croissance à long terme.",
       "subscription": {
-        "price": "Abonnement optionnel de 29€/mois*",
+        "price": "Après 1 an : Abonnement mensuel de 19,90 €/mois, sans engagement",
         "services_inclus": [
-          {
-            "titre": "Hébergement sécurisé",
-            "description": "Votre site est hébergé sur des serveurs fiables et protégés."
-          },
-          {
-            "titre": "Maintenance technique",
-            "description": "Mises à jour régulières du CMS et des plugins pour assurer la stabilité du site."
-          },
-          {
-            "titre": "Modifications illimitées",
-            "description": "Ajustements et mises à jour de contenu sans restriction."
-          },
-          {
-            "titre": "Rapports mensuels",
-            "description": "Analyse des performances du site pour suivre son évolution."
-          },
-          {
-            "titre": "Support prioritaire",
-            "description": "Assistance disponible même les jours fériés et pendant les vacances."
-          }
+          { "titre": "Hébergement sécurisé", "description": "Hébergement inclus pendant 1 an, puis renouvelable." },
+          { "titre": "Maintenance continue", "description": "Mises à jour régulières et modifications illimitées (ajustements de contenu sans restriction)." },
+          { "titre": "Rapports mensuels", "description": "Rapports mensuels sur les performances du site." },
+          { "titre": "Support client prioritaire", "description": "Support prioritaire, même les jours fériés et pendant les vacances." }
         ]
       }
     }
   ],
-  "subscriptionBenefits": [
+  "whySubscription": [
     {
       "title": "Tranquillité d'esprit",
       "description": "Votre site reste sécurisé et à jour en permanence"

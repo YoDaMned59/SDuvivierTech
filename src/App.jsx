@@ -3,12 +3,8 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
 import Home from './pages/Home';
-import Projects from './pages/Projects';
-import Services from './pages/Services';
-import Contact from './pages/Contact';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import LegalNotice from './pages/LegalNotice';
-import Offres from './pages/Offres';
 import CookieBanner from './components/CookieBanner';
 import './styles/main.scss';
 import { Helmet } from 'react-helmet';
@@ -30,7 +26,7 @@ function ScrollToTop() {
 
 function App() {
   return (
-    <Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+    <Router>
       <div className="app">
         <ScrollToTop />
         <Helmet>
@@ -43,15 +39,12 @@ function App() {
             name="keywords"
             content="développeur web, freelance, Lille, création site web, site vitrine, application web, web design, front-end, React, JavaScript, site professionnel, site sur-mesure, référencement, SEO, Nord, Hauts-de-France"
           />
+          <script defer src="https://cloud.umami.is/script.js" data-website-id="153b804e-6d24-43e9-990b-4f588f1b0705"></script>
         </Helmet>
         <Navigation />
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/offres" element={<Offres />} />
-            <Route path="/contact" element={<Contact />} />
             <Route path="/politique-de-confidentialite" element={<PrivacyPolicy />} />
             <Route path="/mentions-legales" element={<LegalNotice />} />
           </Routes>

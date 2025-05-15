@@ -18,25 +18,22 @@ function Navigation() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleAboutClick = (e) => {
+  const handleNavClick = (e, sectionClass) => {
     e.preventDefault();
     setIsMenuOpen(false);
-    
-    if (location.pathname === '/') {
-      // Si on est sur la page d'accueil, on défile directement vers la section
-      const aboutSection = document.querySelector('.about');
-      if (aboutSection) {
-        aboutSection.scrollIntoView({ behavior: 'smooth' });
+
+    const scrollToSection = () => {
+      const section = document.querySelector(sectionClass);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
       }
+    };
+
+    if (location.pathname === '/') {
+      scrollToSection();
     } else {
-      // Si on est sur une autre page, on retourne à l'accueil puis on défile
       navigate('/');
-      setTimeout(() => {
-        const aboutSection = document.querySelector('.about');
-        if (aboutSection) {
-          aboutSection.scrollIntoView({ behavior: 'smooth' });
-        }
-      }, 100);
+      setTimeout(scrollToSection, 100);
     }
   };
 
@@ -58,12 +55,10 @@ function Navigation() {
         </button>
 
         <div className={`navigation__links ${isMenuOpen ? 'active' : ''}`}>
-          <Link to="/" onClick={() => setIsMenuOpen(false)}>Accueil</Link>
-          <a href="#about" onClick={handleAboutClick}>À propos</a>
-          <Link to="/services" onClick={() => setIsMenuOpen(false)}>Services</Link>
-          <Link to="/offres" onClick={() => setIsMenuOpen(false)}>Offres</Link>
-          <Link to="/projects" onClick={() => setIsMenuOpen(false)}>Projets</Link>
-          <Link to="/contact" onClick={() => setIsMenuOpen(false)}>Contact</Link>
+          <a href="#services" onClick={e => handleNavClick(e, '.services-section')}>Services</a>
+          <a href="#offres" onClick={e => handleNavClick(e, '.offres-section')}>Offres</a>
+          <a href="#projects" onClick={e => handleNavClick(e, '.projects-section')}>Projets</a>
+          <a href="#contact" onClick={e => handleNavClick(e, '.contact-section')}>Contact</a>
         </div>
       </div>
     </nav>

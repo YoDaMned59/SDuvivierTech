@@ -1,89 +1,37 @@
-.hero {
-  min-height: 100vh;
+@import './variables';
+
+.hero-container {
+  width: 100%;
+  min-height: 70vh;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  background: $background-dark;
+  padding: 3rem 1rem 2rem 1rem;
+}
+
+.hero {
+  background: $background-card;
+  border-radius: $border-radius;
+  box-shadow: $shadow;
+  padding: 2.5rem 2rem;
+  max-width: 700px;
+  width: 100%;
   text-align: center;
-  padding: 2rem;
-  position: relative;
-  overflow: hidden;
-  
-  &__content {
-    max-width: 800px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 2;
-  }
 
-  &__title {
-    font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 1.5rem;
-    min-height: 3.5rem; // Hauteur fixe pour éviter le CLS
+  h1 {
+    color: $primary-color;
+    font-size: 2.2rem;
+    margin-bottom: 1.2rem;
   }
-
-  .typing-effect {
-    display: inline-block;
-    min-width: 300px; 
-    min-height: 1.5em; 
-    position: relative;
-    
-    &::after {
-      content: '|';
-      position: absolute;
-      right: -4px;
-      animation: blink 1s infinite;
-    }
+  h2 {
+    color: $text-light;
+    font-size: 1.3rem;
+    margin-bottom: 1.2rem;
   }
-
-  &__subtitle {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
-    min-height: 2rem; 
-  }
-
-  &__description {
+  p {
+    color: $text-gray;
     font-size: 1.1rem;
-    line-height: 1.6;
-    margin-bottom: 2rem;
-    min-height: 3rem;
-
-    .hero__price {
-      color: $gold;
-      font-weight: 600;
-      margin-left: 0.5rem;
-      font-size: 1.2rem;
-    }
-  }
-}
-
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
-}
-
-@media (max-width: 768px) {
-  .hero {
-    padding: 1rem;
-    
-    &__title {
-      font-size: 2rem;
-      min-height: 2.5rem;
-    }
-    
-    .typing-effect {
-      min-width: 200px;
-    }
-    
-    &__subtitle {
-      font-size: 1.2rem;
-      min-height: 1.5rem;
-    }
-    
-    &__description {
-      font-size: 1rem;
-      min-height: 2.5rem;
-    }
+    margin-bottom: 1.2rem;
   }
 } 

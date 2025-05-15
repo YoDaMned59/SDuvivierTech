@@ -1,3 +1,5 @@
+@import './main.scss';
+
 // Variables
 $primary-dark: #0a0a1f;
 $secondary-dark: #12122a;
@@ -200,21 +202,6 @@ $text-gray: #9ca3af;
           font-size: 0.875rem;
           font-style: italic;
         }
-      }
-
-      .badge {
-        position: absolute;
-        top: -12px;
-        right: -12px;
-        background: linear-gradient(135deg, $gold, darken($gold, 15%));
-        color: $primary-dark;
-        padding: 0.5rem 1rem;
-        border-radius: 20px;
-        font-weight: 600;
-        font-size: 0.875rem;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        animation: fadeInUp 0.5s ease-out forwards;
-        z-index: 1;
       }
 
       .evolution-label {
@@ -493,4 +480,215 @@ $text-gray: #9ca3af;
       }
     }
   }
+}
+
+.offres-section {
+  background: $background-dark;
+  padding: 4rem 1rem 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.page-title {
+  color: $text-gold;
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
+.offers-grid {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 2.5rem;
+}
+
+.offer-card {
+  background: $secondary-color;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba($primary-color,0.10);
+  border: 1.5px solid $primary-color;
+  padding: 2.5rem 2rem 2rem 2rem;
+  margin-bottom: 2rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 340px;
+  max-width: 420px;
+  flex: 1;
+}
+
+.icon-wrapper {
+  color: $primary-color;
+  background: $secondary-color;
+  border-radius: 50%;
+  width: 3.5rem;
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.2rem auto;
+  font-size: 2rem;
+}
+
+.card-title {
+  color: $text-gold;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 0.7rem;
+  text-align: center;
+}
+
+.amount {
+  color: $primary-color;
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.features {
+  width: 100%;
+  margin-bottom: 1.2rem;
+  li {
+  display: flex;
+    align-items: center;
+    color: $text-light;
+    font-size: 1.08rem;
+    margin-bottom: 0.5rem;
+    &::before {
+      content: '✔';
+  color: $primary-color;
+      font-size: 1.1rem;
+  margin-right: 0.7rem;
+    }
+  }
+}
+
+.tagline {
+  background: $secondary-color;
+  border-radius: 10px;
+  color: $text-light;
+  padding: 0.8rem 1.2rem;
+  margin: 1.2rem 0 1.5rem 0;
+  text-align: center;
+  font-size: 1.05rem;
+  border: 1px solid $primary-color;
+}
+
+.subscription-box {
+  background: $secondary-color;
+  border-radius: 14px;
+  padding: 1.2rem 1rem 1rem 1rem;
+  margin-bottom: 1.2rem;
+  border: 1.5px solid $primary-color;
+  width: 100%;
+  .sub-title {
+    color: $primary-color;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+  }
+  ul {
+    margin-bottom: 0.5rem;
+    padding-left: 1.2rem;
+    li {
+      color: $text-light;
+      font-size: 1rem;
+      margin-bottom: 0.3rem;
+      &::before {
+        content: '✔';
+  color: $primary-color;
+        font-size: 1rem;
+        margin-right: 0.5rem;
+      }
+    }
+  }
+}
+
+.why-subscription {
+  background: rgba($secondary-color, 0.85);
+  border-radius: 16px;
+  padding: 2rem 2.5rem;
+  margin: 3rem auto 0 auto;
+  max-width: 900px;
+  color: $text-light;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+  font-size: 1.13rem;
+  line-height: 1.7;
+  text-align: left;
+  
+  strong {
+    color: $text-gold;
+    font-size: 1.25rem;
+    display: block;
+    margin-bottom: 1.2rem;
+    text-align: center;
+  }
+
+  @media (max-width: 600px) {
+    padding: 1.2rem 0.7rem;
+    font-size: 1rem;
+  }
+}
+
+.why-subscription-block {
+  margin: 3rem auto 0 auto;
+  max-width: 1100px;
+  width: 100%;
+  text-align: center;
+}
+
+.why-subscription-title {
+  color: $text-gold;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+  letter-spacing: 0.01em;
+}
+
+.why-subscription-grid {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  width: 100%;
+  margin: 0 auto;
+  @media (max-width: 900px) {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+  }
+}
+
+.why-subscription-item {
+  background: rgba($secondary-color, 0.85);
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  min-width: 260px;
+  max-width: 340px;
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.why-subscription-item-title {
+  color: $text-gold;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.why-subscription-item-desc {
+  color: $text-light;
+  font-size: 1.08rem;
+  line-height: 1.6;
 } 
